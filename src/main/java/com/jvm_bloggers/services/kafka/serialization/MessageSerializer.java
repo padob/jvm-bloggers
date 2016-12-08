@@ -1,8 +1,8 @@
-package com.jvm_bloggers.kafka.serialization;
+package com.jvm_bloggers.services.kafka.serialization;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jvm_bloggers.kafka.exception.UnableToSerializeMessageException;
+import com.jvm_bloggers.services.kafka.exception.UnableToSerializeMessageException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

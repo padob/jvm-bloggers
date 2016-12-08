@@ -1,4 +1,4 @@
-package com.jvm_bloggers.kafka;
+package com.jvm_bloggers.services.kafka;
 
 import akka.Done;
 import akka.actor.ActorRef;
@@ -10,8 +10,8 @@ import akka.stream.ActorMaterializer;
 import akka.stream.OverflowStrategy;
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Source;
-import com.jvm_bloggers.kafka.exception.UnableToConnectToKafkaException;
-import com.jvm_bloggers.kafka.serialization.MessageSerializer;
+import com.jvm_bloggers.services.kafka.exception.UnableToConnectToKafkaException;
+import com.jvm_bloggers.services.kafka.serialization.MessageSerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.ByteArraySerializer;

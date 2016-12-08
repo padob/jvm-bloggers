@@ -1,4 +1,4 @@
-package com.jvm_bloggers.kafka;
+package com.jvm_bloggers.services.kafka;
 
 import lombok.Getter;
 import lombok.ToString;

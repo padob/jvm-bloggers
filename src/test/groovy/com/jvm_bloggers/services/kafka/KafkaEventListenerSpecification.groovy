@@ -1,8 +1,8 @@
-package com.jvm_bloggers.kafka
+package com.jvm_bloggers.services.kafka
 
 import com.jvm_bloggers.core.newsletter_issues.NewIssuePublished
 import com.jvm_bloggers.entities.newsletter_issues.NewsletterIssue
-import com.jvm_bloggers.kafka.message.NewIssuePublishedMessage
+import com.jvm_bloggers.services.kafka.message.NewIssuePublishedMessage
 import spock.lang.Specification
 import spock.lang.Subject
 

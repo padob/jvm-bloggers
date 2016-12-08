@@ -1,4 +1,4 @@
-package com.jvm_bloggers.kafka.message;
+package com.jvm_bloggers.services.kafka.message;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

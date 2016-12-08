@@ -1,4 +1,4 @@
-package com.jvm_bloggers.kafka
+package com.jvm_bloggers.services.kafka
 
 import akka.actor.ActorSystem
 import akka.kafka.ConsumerMessage
@@ -10,7 +10,7 @@ import akka.stream.javadsl.Keep
 import akka.stream.testkit.TestSubscriber
 import akka.stream.testkit.javadsl.TestSink
 import com.jvm_bloggers.SpringContextAwareSpecification
-import com.jvm_bloggers.kafka.message.NewIssuePublishedMessage
+import com.jvm_bloggers.services.kafka.message.NewIssuePublishedMessage
 import net.manub.embeddedkafka.EmbeddedKafka$
 import net.manub.embeddedkafka.EmbeddedKafkaConfig
 import org.apache.kafka.clients.consumer.ConsumerConfig
