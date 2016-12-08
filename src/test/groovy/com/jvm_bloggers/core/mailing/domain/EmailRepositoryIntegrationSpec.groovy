@@ -1,6 +1,8 @@
 package com.jvm_bloggers.core.mailing.domain
 
 import com.jvm_bloggers.SpringContextAwareSpecification
+import com.jvm_bloggers.entities.mailing.Email
+import com.jvm_bloggers.entities.mailing.EmailRepository
 import org.springframework.beans.factory.annotation.Autowired
 
 import java.time.LocalDateTime

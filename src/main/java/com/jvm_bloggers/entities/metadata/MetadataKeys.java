@@ -1,4 +1,4 @@
-package com.jvm_bloggers.core.metadata;
+package com.jvm_bloggers.entities.metadata;
 
 public interface MetadataKeys {
 

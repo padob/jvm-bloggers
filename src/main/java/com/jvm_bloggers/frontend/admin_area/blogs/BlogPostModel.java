@@ -1,7 +1,7 @@
 package com.jvm_bloggers.frontend.admin_area.blogs;
 
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository;
+import com.jvm_bloggers.entities.blog_posts.BlogPost;
+import com.jvm_bloggers.entities.blog_posts.BlogPostRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.LoadableDetachableModel;

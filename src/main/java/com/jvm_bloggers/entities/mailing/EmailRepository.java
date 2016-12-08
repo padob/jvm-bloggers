@@ -1,4 +1,4 @@
-package com.jvm_bloggers.core.mailing.domain;
+package com.jvm_bloggers.entities.mailing;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

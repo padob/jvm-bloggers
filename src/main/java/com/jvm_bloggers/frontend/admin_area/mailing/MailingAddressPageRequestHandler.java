@@ -1,7 +1,7 @@
 package com.jvm_bloggers.frontend.admin_area.mailing;
 
-import com.jvm_bloggers.core.mailing.domain.MailingAddress;
-import com.jvm_bloggers.core.mailing.domain.MailingAddressRepository;
+import com.jvm_bloggers.entities.mailing.MailingAddress;
+import com.jvm_bloggers.entities.mailing.MailingAddressRepository;
 import com.jvm_bloggers.frontend.admin_area.PaginationConfiguration;
 import lombok.AllArgsConstructor;
 import org.apache.wicket.markup.repeater.data.IDataProvider;

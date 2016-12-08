@@ -1,8 +1,9 @@
 package com.jvm_bloggers.core.data_fetching.blog_posts.domain
 
 import com.jvm_bloggers.common.utils.NowProvider
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog
-import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogType
+import com.jvm_bloggers.entities.blog_posts.Blog
+import com.jvm_bloggers.entities.blog_posts.BlogPost
+import com.jvm_bloggers.entities.blog_posts.BlogType
 import spock.lang.Specification
 import spock.lang.Unroll
 

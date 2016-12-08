@@ -1,8 +1,8 @@
 package com.jvm_bloggers.frontend.admin_area.blogs;
 
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository;
-import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogRepository;
+import com.jvm_bloggers.entities.blog_posts.BlogPost;
+import com.jvm_bloggers.entities.blog_posts.BlogPostRepository;
+import com.jvm_bloggers.entities.blog_posts.BlogRepository;
 import com.jvm_bloggers.frontend.admin_area.AbstractAdminPage;
 import com.jvm_bloggers.frontend.admin_area.panels.CustomPagingNavigator;
 import org.apache.wicket.markup.html.basic.Label;

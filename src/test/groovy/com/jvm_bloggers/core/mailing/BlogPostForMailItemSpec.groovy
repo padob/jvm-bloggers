@@ -1,7 +1,7 @@
 package com.jvm_bloggers.core.mailing
 
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog
+import com.jvm_bloggers.entities.blog_posts.Blog
+import com.jvm_bloggers.entities.blog_posts.BlogPost
 import org.apache.commons.lang3.StringUtils
 import spock.lang.Specification
 

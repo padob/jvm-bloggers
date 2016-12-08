@@ -1,6 +1,8 @@
 package com.jvm_bloggers.core.mailing.domain
 
 import com.jvm_bloggers.SpringContextAwareSpecification
+import com.jvm_bloggers.entities.mailing.MailingAddress
+import com.jvm_bloggers.entities.mailing.MailingAddressRepository
 import org.springframework.beans.factory.annotation.Autowired
 
 class MailingAddressRepositorySpec extends SpringContextAwareSpecification {

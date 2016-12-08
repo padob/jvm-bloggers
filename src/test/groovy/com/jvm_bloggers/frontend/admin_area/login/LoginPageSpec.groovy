@@ -1,11 +1,11 @@
 package com.jvm_bloggers.frontend.admin_area.login
 
 import com.jvm_bloggers.MockSpringContextAwareSpecification
+import com.jvm_bloggers.common.utils.NowProvider
+import com.jvm_bloggers.entities.blog_posts.BlogPostRepository
 import com.jvm_bloggers.frontend.admin_area.AdminDashboardPage
 import com.jvm_bloggers.frontend.admin_area.PaginationConfiguration
 import com.jvm_bloggers.frontend.admin_area.login.attack.BruteForceLoginAttackDetector
-import com.jvm_bloggers.common.utils.NowProvider
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository
 import org.apache.wicket.authroles.authorization.strategies.role.Roles
 import org.apache.wicket.util.tester.FormTester
 

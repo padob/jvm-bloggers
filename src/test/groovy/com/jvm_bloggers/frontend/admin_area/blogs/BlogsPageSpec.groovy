@@ -1,11 +1,11 @@
 package com.jvm_bloggers.frontend.admin_area.blogs
 
 import com.jvm_bloggers.MockSpringContextAwareSpecification
+import com.jvm_bloggers.entities.blog_posts.Blog
+import com.jvm_bloggers.entities.blog_posts.BlogPostRepository
+import com.jvm_bloggers.entities.blog_posts.BlogRepository
+import com.jvm_bloggers.entities.blog_posts.BlogType
 import com.jvm_bloggers.frontend.admin_area.PaginationConfiguration
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog
-import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogRepository
-import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogType
 
 import static com.jvm_bloggers.frontend.admin_area.blogs.BlogsPage.*
 import static java.time.LocalDateTime.now

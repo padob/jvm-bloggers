@@ -1,8 +1,8 @@
 package com.jvm_bloggers.core.mailing;
 
 import com.google.common.base.Preconditions;
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog;
+import com.jvm_bloggers.entities.blog_posts.Blog;
+import com.jvm_bloggers.entities.blog_posts.BlogPost;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 

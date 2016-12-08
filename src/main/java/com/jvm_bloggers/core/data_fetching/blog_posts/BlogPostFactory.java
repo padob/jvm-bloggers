@@ -1,8 +1,8 @@
 package com.jvm_bloggers.core.data_fetching.blog_posts;
 
 import com.jvm_bloggers.common.utils.NowProvider;
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog;
+import com.jvm_bloggers.entities.blog_posts.Blog;
+import com.jvm_bloggers.entities.blog_posts.BlogPost;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

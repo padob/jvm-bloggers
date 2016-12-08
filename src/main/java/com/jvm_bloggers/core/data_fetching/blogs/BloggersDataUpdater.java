@@ -1,11 +1,11 @@
 package com.jvm_bloggers.core.data_fetching.blogs;
 
 import com.jvm_bloggers.common.utils.NowProvider;
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog;
-import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogRepository;
 import com.jvm_bloggers.core.data_fetching.blogs.json_data.BloggerEntry;
 import com.jvm_bloggers.core.data_fetching.blogs.json_data.BloggersData;
 import com.jvm_bloggers.core.rss.SyndFeedProducer;
+import com.jvm_bloggers.entities.blog_posts.Blog;
+import com.jvm_bloggers.entities.blog_posts.BlogRepository;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

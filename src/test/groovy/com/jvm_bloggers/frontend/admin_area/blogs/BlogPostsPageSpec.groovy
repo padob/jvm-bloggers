@@ -1,17 +1,16 @@
 package com.jvm_bloggers.frontend.admin_area.blogs
 
 import com.jvm_bloggers.MockSpringContextAwareSpecification
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog
-import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogRepository
-import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogType
+import com.jvm_bloggers.entities.blog_posts.Blog
+import com.jvm_bloggers.entities.blog_posts.BlogPostRepository
+import com.jvm_bloggers.entities.blog_posts.BlogRepository
+import com.jvm_bloggers.entities.blog_posts.BlogType
 import com.jvm_bloggers.frontend.admin_area.PaginationConfiguration
 import org.apache.wicket.request.mapper.parameter.PageParameters
 
 import static com.jvm_bloggers.frontend.admin_area.blogs.BlogPostsPage.BLOG_ID_PARAM
 import static com.jvm_bloggers.frontend.admin_area.blogs.BlogPostsPage.HEADER_ID
 import static java.time.LocalDateTime.now
-
 
 class BlogPostsPageSpec extends MockSpringContextAwareSpecification {
 

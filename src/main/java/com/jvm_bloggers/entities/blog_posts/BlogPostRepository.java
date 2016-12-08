@@ -1,4 +1,4 @@
-package com.jvm_bloggers.core.data_fetching.blog_posts.domain;
+package com.jvm_bloggers.entities.blog_posts;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -3,9 +3,9 @@ package com.jvm_bloggers.core.rss
 import com.jvm_bloggers.common.utils.NowProvider
 import com.jvm_bloggers.core.blogpost_redirect.LinkGenerator
 import com.jvm_bloggers.core.blogpost_redirect.RedirectController
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog
+import com.jvm_bloggers.entities.blog_posts.Blog
+import com.jvm_bloggers.entities.blog_posts.BlogPost
+import com.jvm_bloggers.entities.blog_posts.BlogPostRepository
 import com.rometools.rome.feed.synd.SyndFeed
 import org.springframework.data.domain.Pageable
 import spock.lang.Specification

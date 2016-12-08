@@ -1,4 +1,4 @@
-package com.jvm_bloggers.core.data_fetching.blogs.domain;
+package com.jvm_bloggers.entities.blog_posts;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

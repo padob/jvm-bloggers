@@ -1,9 +1,9 @@
 package com.jvm_bloggers.frontend.admin_area.mailing
 
 import com.jvm_bloggers.MockSpringContextAwareSpecification
+import com.jvm_bloggers.entities.mailing.MailingAddress
+import com.jvm_bloggers.entities.mailing.MailingAddressRepository
 import com.jvm_bloggers.frontend.admin_area.PaginationConfiguration
-import com.jvm_bloggers.core.mailing.domain.MailingAddress
-import com.jvm_bloggers.core.mailing.domain.MailingAddressRepository
 import org.apache.wicket.model.Model
 import org.apache.wicket.util.tester.FormTester
 

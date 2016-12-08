@@ -1,8 +1,8 @@
-package com.jvm_bloggers.core.newsletter_issues.domain;
+package com.jvm_bloggers.entities.newsletter_issues;
 
 
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog;
+import com.jvm_bloggers.entities.blog_posts.Blog;
+import com.jvm_bloggers.entities.blog_posts.BlogPost;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

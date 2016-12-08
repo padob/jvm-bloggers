@@ -1,8 +1,7 @@
-package com.jvm_bloggers.core.data_fetching.blog_posts.domain;
+package com.jvm_bloggers.entities.blog_posts;
 
 
 import com.google.common.annotations.VisibleForTesting;
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

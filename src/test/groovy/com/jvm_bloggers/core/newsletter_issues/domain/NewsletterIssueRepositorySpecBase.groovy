@@ -3,11 +3,9 @@ package com.jvm_bloggers.core.newsletter_issues.domain
 import com.google.common.collect.Lists
 import com.jvm_bloggers.SpringContextAwareSpecification
 import com.jvm_bloggers.common.utils.NowProvider
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog
-import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogRepository
-import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogType
+import com.jvm_bloggers.entities.blog_posts.*
+import com.jvm_bloggers.entities.newsletter_issues.NewsletterIssue
+import com.jvm_bloggers.entities.newsletter_issues.NewsletterIssueRepository
 import org.springframework.beans.factory.annotation.Autowired
 
 import java.time.LocalDateTime

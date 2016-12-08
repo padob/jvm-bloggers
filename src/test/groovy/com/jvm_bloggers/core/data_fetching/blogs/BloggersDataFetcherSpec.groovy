@@ -2,7 +2,7 @@ package com.jvm_bloggers.core.data_fetching.blogs
 
 import com.jvm_bloggers.TestNowProvider
 import com.jvm_bloggers.common.utils.NowProvider
-import com.jvm_bloggers.core.metadata.MetadataRepository
+import com.jvm_bloggers.entities.metadata.MetadataRepository
 import spock.lang.Specification
 
 import java.time.LocalDateTime

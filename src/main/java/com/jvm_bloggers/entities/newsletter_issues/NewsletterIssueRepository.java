@@ -1,4 +1,4 @@
-package com.jvm_bloggers.core.newsletter_issues.domain;
+package com.jvm_bloggers.entities.newsletter_issues;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

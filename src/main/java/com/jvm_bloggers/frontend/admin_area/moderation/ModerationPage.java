@@ -1,6 +1,6 @@
 package com.jvm_bloggers.frontend.admin_area.moderation;
 
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
+import com.jvm_bloggers.entities.blog_posts.BlogPost;
 import com.jvm_bloggers.frontend.admin_area.AbstractAdminPage;
 import com.jvm_bloggers.frontend.admin_area.panels.CustomFeedbackPanel;
 import com.jvm_bloggers.frontend.admin_area.panels.CustomPagingNavigator;

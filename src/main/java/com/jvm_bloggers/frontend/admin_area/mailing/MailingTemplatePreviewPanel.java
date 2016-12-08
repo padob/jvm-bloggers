@@ -5,7 +5,7 @@ import com.jvm_bloggers.common.utils.NowProvider;
 import com.jvm_bloggers.core.mailing.BlogSummaryMailGenerator;
 import com.jvm_bloggers.core.mailing.IssueNumberRetriever;
 import com.jvm_bloggers.core.newsletter_issues.NewsletterIssueFactory;
-import com.jvm_bloggers.core.newsletter_issues.domain.NewsletterIssue;
+import com.jvm_bloggers.entities.newsletter_issues.NewsletterIssue;
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;

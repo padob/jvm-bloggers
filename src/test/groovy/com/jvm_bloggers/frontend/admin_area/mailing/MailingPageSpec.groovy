@@ -1,14 +1,14 @@
 package com.jvm_bloggers.frontend.admin_area.mailing
 
 import com.jvm_bloggers.MockSpringContextAwareSpecification
-import com.jvm_bloggers.frontend.admin_area.PaginationConfiguration
 import com.jvm_bloggers.common.utils.NowProvider
 import com.jvm_bloggers.core.mailing.BlogSummaryMailGenerator
 import com.jvm_bloggers.core.mailing.IssueNumberRetriever
-import com.jvm_bloggers.core.metadata.Metadata
-import com.jvm_bloggers.core.metadata.MetadataKeys
-import com.jvm_bloggers.core.metadata.MetadataRepository
 import com.jvm_bloggers.core.newsletter_issues.NewsletterIssueFactory
+import com.jvm_bloggers.entities.metadata.Metadata
+import com.jvm_bloggers.entities.metadata.MetadataKeys
+import com.jvm_bloggers.entities.metadata.MetadataRepository
+import com.jvm_bloggers.frontend.admin_area.PaginationConfiguration
 import org.apache.wicket.Page
 import org.apache.wicket.util.tester.FormTester
 

@@ -1,4 +1,4 @@
-package com.jvm_bloggers.core.data_fetching.blog_posts.domain;
+package com.jvm_bloggers.entities.blog_posts;
 
 import com.jvm_bloggers.SpringApplicationContext;
 import com.jvm_bloggers.core.rss.AggregatedRssFeedProducer;

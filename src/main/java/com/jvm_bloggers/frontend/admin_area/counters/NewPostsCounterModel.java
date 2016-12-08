@@ -2,7 +2,7 @@ package com.jvm_bloggers.frontend.admin_area.counters;
 
 import com.jvm_bloggers.common.utils.DateTimeUtilities;
 import com.jvm_bloggers.common.utils.NowProvider;
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository;
+import com.jvm_bloggers.entities.blog_posts.BlogPostRepository;
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.AbstractReadOnlyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;

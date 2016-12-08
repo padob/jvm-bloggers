@@ -1,6 +1,6 @@
-package com.jvm_bloggers.core.blogpost_redirect.click_counter.domain;
+package com.jvm_bloggers.entities.click_counter;
 
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
+import com.jvm_bloggers.entities.blog_posts.BlogPost;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;

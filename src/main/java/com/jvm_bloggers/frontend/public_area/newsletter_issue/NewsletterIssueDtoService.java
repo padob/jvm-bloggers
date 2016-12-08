@@ -1,7 +1,7 @@
 package com.jvm_bloggers.frontend.public_area.newsletter_issue;
 
-import com.jvm_bloggers.core.newsletter_issues.domain.NewsletterIssue;
-import com.jvm_bloggers.core.newsletter_issues.domain.NewsletterIssueRepository;
+import com.jvm_bloggers.entities.newsletter_issues.NewsletterIssue;
+import com.jvm_bloggers.entities.newsletter_issues.NewsletterIssueRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

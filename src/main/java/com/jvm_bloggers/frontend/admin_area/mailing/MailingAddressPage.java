@@ -1,6 +1,6 @@
 package com.jvm_bloggers.frontend.admin_area.mailing;
 
-import com.jvm_bloggers.core.mailing.domain.MailingAddress;
+import com.jvm_bloggers.entities.mailing.MailingAddress;
 import com.jvm_bloggers.frontend.admin_area.panels.CustomFeedbackPanel;
 import com.jvm_bloggers.frontend.admin_area.panels.CustomPagingNavigator;
 import lombok.extern.slf4j.Slf4j;

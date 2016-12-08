@@ -1,9 +1,9 @@
 package com.jvm_bloggers.core
 
 import com.jvm_bloggers.core.data_fetching.blog_posts.BlogPostsFetchingScheduler
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository
 import com.jvm_bloggers.core.data_fetching.blogs.BloggersDataFetchingScheduler
-import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogRepository
+import com.jvm_bloggers.entities.blog_posts.BlogPostRepository
+import com.jvm_bloggers.entities.blog_posts.BlogRepository
 import spock.lang.Specification
 import spock.lang.Subject
 

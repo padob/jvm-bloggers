@@ -4,9 +4,9 @@ import akka.actor.ActorRef
 import akka.actor.ActorSystem
 import akka.actor.Props
 import akka.testkit.JavaTestKit
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog
+import com.jvm_bloggers.entities.blog_posts.Blog
+import com.jvm_bloggers.entities.blog_posts.BlogPost
+import com.jvm_bloggers.entities.blog_posts.BlogPostRepository
 import com.rometools.rome.feed.synd.SyndContent
 import com.rometools.rome.feed.synd.SyndEntry
 import scala.concurrent.duration.FiniteDuration

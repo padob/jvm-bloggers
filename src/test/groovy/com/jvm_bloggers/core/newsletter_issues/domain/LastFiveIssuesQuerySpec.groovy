@@ -1,7 +1,8 @@
 package com.jvm_bloggers.core.newsletter_issues.domain
 
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost
-import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog
+import com.jvm_bloggers.entities.blog_posts.Blog
+import com.jvm_bloggers.entities.blog_posts.BlogPost
+import com.jvm_bloggers.entities.newsletter_issues.NewsletterIssueBaseData
 
 import java.time.LocalDate
 import java.util.stream.Collectors
