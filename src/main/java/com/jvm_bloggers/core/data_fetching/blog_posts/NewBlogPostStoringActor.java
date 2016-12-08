@@ -4,7 +4,7 @@ import akka.actor.AbstractActor;
 import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 import com.jvm_bloggers.common.utils.DateTimeUtilities;
-import com.jvm_bloggers.core.utils.Validators;
+import com.jvm_bloggers.common.utils.Validators;
 import com.jvm_bloggers.entities.blog_posts.BlogPost;
 import com.jvm_bloggers.entities.blog_posts.BlogPostRepository;
 import com.rometools.rome.feed.synd.SyndContent;

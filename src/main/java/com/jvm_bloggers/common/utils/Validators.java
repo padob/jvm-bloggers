@@ -1,4 +1,4 @@
-package com.jvm_bloggers.core.utils;
+package com.jvm_bloggers.common.utils;
 
 import org.apache.commons.validator.routines.UrlValidator;
 import org.springframework.util.StringUtils;

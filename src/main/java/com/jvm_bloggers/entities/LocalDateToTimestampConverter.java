@@ -1,4 +1,4 @@
-package com.jvm_bloggers.core.utils;
+package com.jvm_bloggers.entities;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;

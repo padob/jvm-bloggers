@@ -1,4 +1,4 @@
-package com.jvm_bloggers.core.utils
+package com.jvm_bloggers.entities
 
 import com.jvm_bloggers.common.utils.NowProvider
 import spock.lang.Specification

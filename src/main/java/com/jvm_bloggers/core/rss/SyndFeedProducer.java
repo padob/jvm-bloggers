@@ -2,8 +2,8 @@ package com.jvm_bloggers.core.rss;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.jvm_bloggers.common.utils.Validators;
 import com.jvm_bloggers.core.data_fetching.http.ProtocolSwitchingAwareConnectionRedirectHandler;
-import com.jvm_bloggers.core.utils.Validators;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
