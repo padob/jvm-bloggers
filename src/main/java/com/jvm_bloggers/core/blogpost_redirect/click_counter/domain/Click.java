@@ -1,7 +1,6 @@
 package com.jvm_bloggers.core.blogpost_redirect.click_counter.domain;
 
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
-
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;

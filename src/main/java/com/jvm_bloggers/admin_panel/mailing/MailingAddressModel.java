@@ -2,7 +2,6 @@ package com.jvm_bloggers.admin_panel.mailing;
 
 import com.jvm_bloggers.core.mailing.domain.MailingAddress;
 import com.jvm_bloggers.core.mailing.domain.MailingAddressRepository;
-
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;

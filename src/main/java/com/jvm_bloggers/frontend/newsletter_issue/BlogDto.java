@@ -1,7 +1,6 @@
 package com.jvm_bloggers.frontend.newsletter_issue;
 
 import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog;
-
 import lombok.Builder;
 
 import java.util.List;

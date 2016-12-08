@@ -13,9 +13,7 @@ import scala.concurrent.duration.FiniteDuration
 import spock.lang.Specification
 import spock.lang.Subject
 
-import java.time.LocalDateTime
-
-import static com.jvm_bloggers.utils.DateTimeUtilities.toLocalDateTime
+import static com.jvm_bloggers.common.utils.DateTimeUtilities.toLocalDateTime
 
 class NewBlogPostStoringActorSpec extends Specification {
 

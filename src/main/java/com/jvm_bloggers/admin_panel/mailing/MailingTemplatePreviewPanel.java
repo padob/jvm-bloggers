@@ -1,12 +1,11 @@
 package com.jvm_bloggers.admin_panel.mailing;
 
+import com.jvm_bloggers.common.utils.DateTimeUtilities;
+import com.jvm_bloggers.common.utils.NowProvider;
 import com.jvm_bloggers.core.mailing.BlogSummaryMailGenerator;
 import com.jvm_bloggers.core.mailing.IssueNumberRetriever;
 import com.jvm_bloggers.core.newsletter_issues.NewsletterIssueFactory;
 import com.jvm_bloggers.core.newsletter_issues.domain.NewsletterIssue;
-import com.jvm_bloggers.utils.DateTimeUtilities;
-import com.jvm_bloggers.utils.NowProvider;
-
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;

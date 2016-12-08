@@ -1,13 +1,13 @@
 package com.jvm_bloggers.admin_panel.login
 
+import com.jvm_bloggers.MockSpringContextAwareSpecification
+import com.jvm_bloggers.admin_panel.AdminDashboardPage
+import com.jvm_bloggers.admin_panel.PaginationConfiguration
+import com.jvm_bloggers.admin_panel.login.attack.BruteForceLoginAttackDetector
+import com.jvm_bloggers.common.utils.NowProvider
+import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository
 import org.apache.wicket.authroles.authorization.strategies.role.Roles
 import org.apache.wicket.util.tester.FormTester
-import com.jvm_bloggers.MockSpringContextAwareSpecification
-import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository
-import com.jvm_bloggers.utils.NowProvider
-import com.jvm_bloggers.admin_panel.PaginationConfiguration
-import com.jvm_bloggers.admin_panel.AdminDashboardPage
-import com.jvm_bloggers.admin_panel.login.attack.BruteForceLoginAttackDetector
 
 class LoginPageSpec extends MockSpringContextAwareSpecification {
 

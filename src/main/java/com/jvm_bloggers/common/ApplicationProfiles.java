@@ -1,4 +1,4 @@
-package com.jvm_bloggers;
+package com.jvm_bloggers.common;
 
 public class ApplicationProfiles {
 

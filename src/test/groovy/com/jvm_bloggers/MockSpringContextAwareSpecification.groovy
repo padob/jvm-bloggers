@@ -7,8 +7,6 @@ import org.apache.wicket.protocol.http.WebApplication
 import org.apache.wicket.spring.injection.annot.SpringComponentInjector
 import org.apache.wicket.spring.test.ApplicationContextMock
 import org.apache.wicket.util.tester.WicketTester
-
-
 import spock.lang.Specification
 
 public abstract class MockSpringContextAwareSpecification extends Specification {

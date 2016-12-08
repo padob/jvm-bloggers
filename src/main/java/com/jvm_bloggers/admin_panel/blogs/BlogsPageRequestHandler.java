@@ -3,10 +3,8 @@ package com.jvm_bloggers.admin_panel.blogs;
 import com.jvm_bloggers.admin_panel.PaginationConfiguration;
 import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog;
 import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogRepository;
-
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
 import org.apache.wicket.markup.repeater.data.IDataProvider;
 import org.apache.wicket.model.IModel;
 import org.springframework.beans.factory.annotation.Autowired;

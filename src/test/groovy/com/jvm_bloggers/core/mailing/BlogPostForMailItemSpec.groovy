@@ -1,8 +1,8 @@
 package com.jvm_bloggers.core.mailing
 
-import org.apache.commons.lang3.StringUtils
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost
 import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog
+import org.apache.commons.lang3.StringUtils
 import spock.lang.Specification
 
 class BlogPostForMailItemSpec extends Specification {

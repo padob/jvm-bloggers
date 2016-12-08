@@ -2,7 +2,6 @@ package com.jvm_bloggers.core.data_fetching.blog_posts;
 
 import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog;
 import com.rometools.rome.feed.synd.SyndEntry;
-
 import lombok.Data;
 import lombok.NonNull;
 

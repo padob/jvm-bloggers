@@ -3,9 +3,7 @@ package com.jvm_bloggers.admin_panel.mailing;
 import com.jvm_bloggers.admin_panel.panels.CustomFeedbackPanel;
 import com.jvm_bloggers.admin_panel.panels.CustomPagingNavigator;
 import com.jvm_bloggers.core.mailing.domain.MailingAddress;
-
 import lombok.extern.slf4j.Slf4j;
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.bean.validation.PropertyValidator;

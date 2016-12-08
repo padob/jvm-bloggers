@@ -2,9 +2,7 @@ package com.jvm_bloggers.core.mailing.sender;
 
 
 import com.google.common.util.concurrent.RateLimiter;
-
 import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
@@ -19,8 +17,8 @@ import javax.ws.rs.core.Form;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import static com.jvm_bloggers.ApplicationProfiles.PRODUCTION;
-import static com.jvm_bloggers.ApplicationProfiles.STAGE;
+import static com.jvm_bloggers.common.ApplicationProfiles.PRODUCTION;
+import static com.jvm_bloggers.common.ApplicationProfiles.STAGE;
 
 @Component
 @Profile({PRODUCTION, STAGE})

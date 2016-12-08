@@ -1,12 +1,10 @@
 package com.jvm_bloggers.core.data_fetching.http;
 
 import com.google.common.annotations.VisibleForTesting;
-
 import lombok.AccessLevel;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
 import net.jcip.annotations.ThreadSafe;
 import org.apache.commons.collections4.MapUtils;
 

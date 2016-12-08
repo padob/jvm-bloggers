@@ -4,9 +4,7 @@ import com.jvm_bloggers.admin_panel.panels.CustomFeedbackPanel;
 import com.jvm_bloggers.core.data_fetching.blog_posts.BlogPostsFetcher;
 import com.jvm_bloggers.core.data_fetching.blogs.BloggersDataFetcher;
 import com.jvm_bloggers.core.metadata.MetadataKeys;
-
 import lombok.extern.slf4j.Slf4j;
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.markup.html.basic.Label;

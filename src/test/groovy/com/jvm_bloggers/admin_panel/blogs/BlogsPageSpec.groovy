@@ -6,7 +6,6 @@ import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository
 import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog
 import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogRepository
 import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogType
-import org.apache.wicket.model.Model
 
 import static com.jvm_bloggers.admin_panel.blogs.BlogsPage.*
 import static java.time.LocalDateTime.now

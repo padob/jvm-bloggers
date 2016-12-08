@@ -1,4 +1,4 @@
-package com.jvm_bloggers.utils;
+package com.jvm_bloggers.common.utils;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
-import static com.jvm_bloggers.utils.NowProvider.DEFAULT_ZONE;
+import static com.jvm_bloggers.common.utils.NowProvider.DEFAULT_ZONE;
 
 public class DateTimeUtilities {
 

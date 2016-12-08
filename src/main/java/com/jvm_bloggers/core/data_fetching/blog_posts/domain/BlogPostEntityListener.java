@@ -2,7 +2,6 @@ package com.jvm_bloggers.core.data_fetching.blog_posts.domain;
 
 import com.jvm_bloggers.SpringApplicationContext;
 import com.jvm_bloggers.core.rss.AggregatedRssFeedProducer;
-
 import org.springframework.cache.CacheManager;
 
 import javax.persistence.PostPersist;

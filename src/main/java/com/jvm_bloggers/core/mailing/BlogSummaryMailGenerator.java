@@ -9,9 +9,7 @@ import com.jvm_bloggers.core.metadata.MetadataKeys;
 import com.jvm_bloggers.core.metadata.MetadataRepository;
 import com.jvm_bloggers.core.newsletter_issues.domain.NewsletterIssue;
 import com.jvm_bloggers.core.utils.UriUtmComponentsBuilder;
-
 import lombok.NoArgsConstructor;
-
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

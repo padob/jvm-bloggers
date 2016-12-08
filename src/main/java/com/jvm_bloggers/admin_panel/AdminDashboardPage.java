@@ -3,7 +3,6 @@ package com.jvm_bloggers.admin_panel;
 import com.jvm_bloggers.admin_panel.counters.NewPostsCounterModel;
 import com.jvm_bloggers.admin_panel.counters.PostsWaitingForModerationCounterModel;
 import com.jvm_bloggers.admin_panel.moderation.ModerationPage;
-
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.wicketstuff.annotation.mount.MountPath;

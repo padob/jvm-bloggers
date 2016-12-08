@@ -1,4 +1,4 @@
-package com.jvm_bloggers.utils;
+package com.jvm_bloggers.common.utils;
 
 
 import org.springframework.stereotype.Component;

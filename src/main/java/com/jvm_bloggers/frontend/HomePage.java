@@ -3,7 +3,6 @@ package com.jvm_bloggers.frontend;
 import com.jvm_bloggers.frontend.newsletter_issue.NewsletterIssueDto;
 import com.jvm_bloggers.frontend.newsletter_issue.NewsletterIssueDtoService;
 import com.jvm_bloggers.frontend.newsletter_issue.newsletter_panel.NewsletterIssuePanel;
-
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 

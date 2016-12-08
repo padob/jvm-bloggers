@@ -1,11 +1,9 @@
 package com.jvm_bloggers.admin_panel.moderation;
 
 import com.jvm_bloggers.admin_panel.panels.CustomFeedbackPanel;
+import com.jvm_bloggers.common.utils.NowProvider;
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
-import com.jvm_bloggers.utils.NowProvider;
-
 import lombok.RequiredArgsConstructor;
-
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
@@ -14,8 +12,8 @@ import org.apache.wicket.markup.repeater.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import static com.jvm_bloggers.utils.DateTimeUtilities.DATE_TIME_FORMATTER;
-import static com.jvm_bloggers.utils.DateTimeUtilities.lastPublicationDate;
+import static com.jvm_bloggers.common.utils.DateTimeUtilities.DATE_TIME_FORMATTER;
+import static com.jvm_bloggers.common.utils.DateTimeUtilities.lastPublicationDate;
 import static org.apache.commons.lang3.StringUtils.abbreviate;
 
 /**

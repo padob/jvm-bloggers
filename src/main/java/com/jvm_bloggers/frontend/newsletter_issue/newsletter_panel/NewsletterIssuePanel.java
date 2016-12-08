@@ -1,8 +1,7 @@
 package com.jvm_bloggers.frontend.newsletter_issue.newsletter_panel;
 
+import com.jvm_bloggers.common.utils.DateTimeUtilities;
 import com.jvm_bloggers.frontend.newsletter_issue.NewsletterIssueDto;
-import com.jvm_bloggers.utils.DateTimeUtilities;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;

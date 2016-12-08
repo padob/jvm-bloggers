@@ -1,20 +1,20 @@
 package com.jvm_bloggers.admin_panel.mailing
 
-import com.jvm_bloggers.admin_panel.PaginationConfiguration
-import org.apache.wicket.Page
-import org.apache.wicket.util.tester.FormTester
 import com.jvm_bloggers.MockSpringContextAwareSpecification
+import com.jvm_bloggers.admin_panel.PaginationConfiguration
+import com.jvm_bloggers.common.utils.NowProvider
 import com.jvm_bloggers.core.mailing.BlogSummaryMailGenerator
 import com.jvm_bloggers.core.mailing.IssueNumberRetriever
 import com.jvm_bloggers.core.metadata.Metadata
 import com.jvm_bloggers.core.metadata.MetadataKeys
 import com.jvm_bloggers.core.metadata.MetadataRepository
 import com.jvm_bloggers.core.newsletter_issues.NewsletterIssueFactory
-import com.jvm_bloggers.utils.NowProvider
+import org.apache.wicket.Page
+import org.apache.wicket.util.tester.FormTester
 
 import static MetadataKeys.MAILING_GREETING
 import static MetadataKeys.MAILING_TEMPLATE
-import static MailingPage.*
+import static com.jvm_bloggers.admin_panel.mailing.MailingPage.*
 
 class MailingPageSpec extends MockSpringContextAwareSpecification {
 

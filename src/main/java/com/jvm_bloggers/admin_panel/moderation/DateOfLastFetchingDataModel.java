@@ -8,7 +8,7 @@ import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import java.time.LocalDateTime;
 
-import static com.jvm_bloggers.utils.DateTimeUtilities.DATE_TIME_FORMATTER;
+import static com.jvm_bloggers.common.utils.DateTimeUtilities.DATE_TIME_FORMATTER;
 
 public class DateOfLastFetchingDataModel extends AbstractReadOnlyModel<String> {
 

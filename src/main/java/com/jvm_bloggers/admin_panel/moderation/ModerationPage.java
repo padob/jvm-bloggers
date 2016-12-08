@@ -4,7 +4,6 @@ import com.jvm_bloggers.admin_panel.AbstractAdminPage;
 import com.jvm_bloggers.admin_panel.panels.CustomFeedbackPanel;
 import com.jvm_bloggers.admin_panel.panels.CustomPagingNavigator;
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
-
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.markup.repeater.data.DataView;

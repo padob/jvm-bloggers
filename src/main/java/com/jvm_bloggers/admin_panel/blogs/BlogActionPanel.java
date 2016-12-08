@@ -3,7 +3,6 @@ package com.jvm_bloggers.admin_panel.blogs;
 import com.jvm_bloggers.admin_panel.panels.CustomFeedbackPanel;
 import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog;
 import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogRepository;
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.markup.html.form.Form;

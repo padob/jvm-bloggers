@@ -4,11 +4,8 @@ import com.google.common.annotations.VisibleForTesting;
 import com.jvm_bloggers.core.blogpost_redirect.LinkGenerator;
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
 import com.jvm_bloggers.core.newsletter_issues.domain.NewsletterIssue;
-
 import com.jvm_bloggers.core.newsletter_issues.domain.NewsletterIssueBaseData;
-
 import lombok.AllArgsConstructor;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

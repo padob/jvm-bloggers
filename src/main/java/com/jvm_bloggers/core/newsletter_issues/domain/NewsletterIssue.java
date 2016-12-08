@@ -3,7 +3,6 @@ package com.jvm_bloggers.core.newsletter_issues.domain;
 
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
 import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,7 +10,6 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Singular;
 import lombok.ToString;
-
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 

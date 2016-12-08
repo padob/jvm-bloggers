@@ -1,4 +1,4 @@
-package com.jvm_bloggers.utils
+package com.jvm_bloggers.common.utils
 
 import spock.lang.Specification
 import spock.lang.Unroll

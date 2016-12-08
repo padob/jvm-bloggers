@@ -5,9 +5,7 @@ import com.jvm_bloggers.admin_panel.login.LoginPage;
 import com.jvm_bloggers.admin_panel.session.UserSession;
 import com.jvm_bloggers.frontend.HomePage;
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
-
 import net.ftlines.wicketsource.WicketSource;
-
 import org.apache.wicket.Page;
 import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.authroles.authentication.AbstractAuthenticatedWebSession;

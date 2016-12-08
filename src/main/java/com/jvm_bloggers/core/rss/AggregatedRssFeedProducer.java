@@ -3,12 +3,12 @@ package com.jvm_bloggers.core.rss;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
+import com.jvm_bloggers.common.utils.DateTimeUtilities;
+import com.jvm_bloggers.common.utils.NowProvider;
 import com.jvm_bloggers.core.blogpost_redirect.LinkGenerator;
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository;
 import com.jvm_bloggers.core.utils.Validators;
-import com.jvm_bloggers.utils.DateTimeUtilities;
-import com.jvm_bloggers.utils.NowProvider;
 import com.rometools.rome.feed.synd.SyndContentImpl;
 import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndEntryImpl;
@@ -16,10 +16,8 @@ import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.feed.synd.SyndFeedImpl;
 import com.rometools.rome.feed.synd.SyndLink;
 import com.rometools.rome.feed.synd.SyndLinkImpl;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,9 +1,9 @@
 package com.jvm_bloggers.frontend.newsletter_issue
 
-import org.apache.wicket.markup.html.basic.Label
-import org.apache.wicket.request.mapper.parameter.PageParameters
 import com.jvm_bloggers.MockSpringContextAwareSpecification
 import com.jvm_bloggers.frontend.newsletter_issue.newsletter_panel.NewsletterIssuePanel
+import org.apache.wicket.markup.html.basic.Label
+import org.apache.wicket.request.mapper.parameter.PageParameters
 
 import java.time.LocalDate
 

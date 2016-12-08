@@ -1,10 +1,9 @@
 package com.jvm_bloggers.admin_panel.moderation;
 
 import com.jvm_bloggers.admin_panel.panels.CustomFeedbackPanel;
+import com.jvm_bloggers.common.utils.NowProvider;
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository;
-import com.jvm_bloggers.utils.NowProvider;
-
 import lombok.extern.slf4j.Slf4j;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;

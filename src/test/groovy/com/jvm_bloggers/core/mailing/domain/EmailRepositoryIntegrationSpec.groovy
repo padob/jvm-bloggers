@@ -1,7 +1,7 @@
 package com.jvm_bloggers.core.mailing.domain
 
-import org.springframework.beans.factory.annotation.Autowired
 import com.jvm_bloggers.SpringContextAwareSpecification
+import org.springframework.beans.factory.annotation.Autowired
 
 import java.time.LocalDateTime
 

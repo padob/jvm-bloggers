@@ -4,9 +4,7 @@ import com.jvm_bloggers.admin_panel.PaginationConfiguration;
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository;
 import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogRepository;
-
 import lombok.RequiredArgsConstructor;
-
 import org.apache.wicket.markup.repeater.data.IDataProvider;
 import org.apache.wicket.model.IModel;
 import org.springframework.data.domain.PageRequest;

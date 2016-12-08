@@ -1,6 +1,6 @@
 package com.jvm_bloggers.core.utils
 
-import com.jvm_bloggers.utils.NowProvider
+import com.jvm_bloggers.common.utils.NowProvider
 import spock.lang.Specification
 import spock.lang.Subject
 

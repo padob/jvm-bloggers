@@ -7,7 +7,6 @@ import com.jvm_bloggers.admin_panel.panels.CustomFeedbackPanel;
 import com.jvm_bloggers.core.metadata.Metadata;
 import com.jvm_bloggers.core.metadata.MetadataKeys;
 import com.jvm_bloggers.core.metadata.MetadataRepository;
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;

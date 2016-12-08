@@ -2,7 +2,6 @@ package com.jvm_bloggers.core.data_fetching.blog_posts;
 
 import com.google.common.base.Preconditions;
 import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog;
-
 import lombok.NonNull;
 
 import static org.apache.commons.lang3.StringUtils.isNotBlank;

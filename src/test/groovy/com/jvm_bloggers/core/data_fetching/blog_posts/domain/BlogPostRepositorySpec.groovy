@@ -1,18 +1,18 @@
 package com.jvm_bloggers.core.data_fetching.blog_posts.domain
 
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.data.domain.PageRequest
 import com.jvm_bloggers.SpringContextAwareSpecification
+import com.jvm_bloggers.common.utils.NowProvider
 import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog
 import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogRepository
-import com.jvm_bloggers.utils.NowProvider
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.domain.PageRequest
 import spock.lang.Subject
 import spock.lang.Unroll
 
 import java.time.LocalDateTime
 
-import static com.jvm_bloggers.core.rss.AggregatedRssFeedProducer.INCLUDE_ALL_AUTHORS_SET
 import static com.jvm_bloggers.core.data_fetching.blogs.domain.BlogType.PERSONAL
+import static com.jvm_bloggers.core.rss.AggregatedRssFeedProducer.INCLUDE_ALL_AUTHORS_SET
 
 class BlogPostRepositorySpec extends SpringContextAwareSpecification {
 

@@ -1,13 +1,11 @@
 package com.jvm_bloggers.core.mailing.sender;
 
 
-import com.jvm_bloggers.TimeConstants;
+import com.jvm_bloggers.common.TimeConstants;
+import com.jvm_bloggers.common.utils.NowProvider;
 import com.jvm_bloggers.core.mailing.domain.Email;
 import com.jvm_bloggers.core.mailing.domain.EmailRepository;
-import com.jvm_bloggers.utils.NowProvider;
-
 import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

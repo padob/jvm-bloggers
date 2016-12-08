@@ -5,7 +5,6 @@ import com.jvm_bloggers.admin_panel.panels.CustomPagingNavigator;
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPost;
 import com.jvm_bloggers.core.data_fetching.blog_posts.domain.BlogPostRepository;
 import com.jvm_bloggers.core.data_fetching.blogs.domain.BlogRepository;
-
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.repeater.Item;
@@ -15,7 +14,7 @@ import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.wicketstuff.annotation.mount.MountPath;
 
 import static com.jvm_bloggers.admin_panel.blogs.BlogPostsPage.BLOG_ID_PARAM;
-import static com.jvm_bloggers.utils.DateTimeUtilities.DATE_TIME_FORMATTER;
+import static com.jvm_bloggers.common.utils.DateTimeUtilities.DATE_TIME_FORMATTER;
 import static org.apache.commons.lang3.StringUtils.abbreviate;
 
 @MountPath("admin-blogs/${" + BLOG_ID_PARAM + "}/posts")

@@ -4,7 +4,6 @@ import com.jvm_bloggers.admin_panel.AbstractAdminPage;
 import com.jvm_bloggers.admin_panel.panels.CustomFeedbackPanel;
 import com.jvm_bloggers.admin_panel.panels.CustomPagingNavigator;
 import com.jvm_bloggers.core.data_fetching.blogs.domain.Blog;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
@@ -17,7 +16,7 @@ import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.wicketstuff.annotation.mount.MountPath;
 
 import static com.jvm_bloggers.admin_panel.blogs.BlogPostsPage.BLOG_ID_PARAM;
-import static com.jvm_bloggers.utils.DateTimeUtilities.DATE_TIME_FORMATTER;
+import static com.jvm_bloggers.common.utils.DateTimeUtilities.DATE_TIME_FORMATTER;
 
 @MountPath("admin-blogs")
 public class BlogsPage extends AbstractAdminPage {
