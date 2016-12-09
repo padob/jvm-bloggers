@@ -101,6 +101,7 @@ dependencies {
     testCompile "com.typesafe.akka:akka-testkit_$scalaVersion:$akkaVersion"
     testCompile "com.typesafe.akka:akka-stream-testkit_$scalaVersion:$akkaVersion"
     testCompile "net.manub:scalatest-embedded-kafka_$scalaVersion:0.9.0"
+    testCompile "guru.nidi:jdepend:2.9.5"
     runtime 'com.h2database:h2'
 
 }
