@@ -31,66 +31,66 @@ class ModuleDependenciesSpec extends Specification {
     }
 
     @Unroll
-    def "should check for no dependencies between between #baseModule and #forbiddenModule"() {
+    def "Should check for no dependencies between #baseModule and #forbiddenModule"() {
         expect:
-        assertPackageNotDependsOn(baseModule, forbiddenModule)
+            assertPackageNotDependsOn(baseModule, forbiddenModule)
 
         where:
-        baseModule       | forbiddenModule
-        COMMON_PACKAGE   | ENTITIES_PACKAGE
-        COMMON_PACKAGE   | DOMAIN_PACKAGE
-        COMMON_PACKAGE   | SERVICE_PACKAGE
-        COMMON_PACKAGE   | FRONTEND_PACKAGE
+            baseModule       | forbiddenModule
+            COMMON_PACKAGE   | ENTITIES_PACKAGE
+            COMMON_PACKAGE   | DOMAIN_PACKAGE
+            COMMON_PACKAGE   | SERVICE_PACKAGE
+            COMMON_PACKAGE   | FRONTEND_PACKAGE
 
-        ENTITIES_PACKAGE | DOMAIN_PACKAGE
-        ENTITIES_PACKAGE | SERVICE_PACKAGE
-        ENTITIES_PACKAGE | FRONTEND_PACKAGE
+            ENTITIES_PACKAGE | DOMAIN_PACKAGE
+            ENTITIES_PACKAGE | SERVICE_PACKAGE
+            ENTITIES_PACKAGE | FRONTEND_PACKAGE
 
-        DOMAIN_PACKAGE   | SERVICE_PACKAGE
-        DOMAIN_PACKAGE   | FRONTEND_PACKAGE
+            DOMAIN_PACKAGE   | SERVICE_PACKAGE
+            DOMAIN_PACKAGE   | FRONTEND_PACKAGE
 
 //        SERVICE_PACKAGE  | ENTITIES_PACKAGE TODO: Think about fixing it in the future
-        SERVICE_PACKAGE  | FRONTEND_PACKAGE
+            SERVICE_PACKAGE  | FRONTEND_PACKAGE
 
-        FRONTEND_PACKAGE | ENTITIES_PACKAGE
-        FRONTEND_PACKAGE | SERVICE_PACKAGE
+            FRONTEND_PACKAGE | ENTITIES_PACKAGE
+            FRONTEND_PACKAGE | SERVICE_PACKAGE
     }
 
     @Unroll
-    def "should not allow for Wicket dependencies in #module"() {
+    def "Should not allow for Wicket dependencies in #module"() {
         expect:
-        assertPackageNotDependsOn(module, WICKET_PACKAGE)
-        assertPackageNotDependsOn(module, WICKETSTUFF_PACKAGE)
+            assertPackageNotDependsOn(module, WICKET_PACKAGE)
+            assertPackageNotDependsOn(module, WICKETSTUFF_PACKAGE)
 
         where:
-        module << [ COMMON_PACKAGE, ENTITIES_PACKAGE, DOMAIN_PACKAGE, SERVICE_PACKAGE ]
+            module << [COMMON_PACKAGE, ENTITIES_PACKAGE, DOMAIN_PACKAGE, SERVICE_PACKAGE]
     }
 
     @Unroll
-    def "should not allow for JPA related dependencies in #module"() {
+    def "Should not allow for JPA related dependencies in #module"() {
         expect:
-        assertPackageNotDependsOn(module, "javax.persistence")
+            assertPackageNotDependsOn(module, "javax.persistence")
 
         where:
-        module << [ COMMON_PACKAGE, DOMAIN_PACKAGE, SERVICE_PACKAGE, FRONTEND_PACKAGE ]
+            module << [COMMON_PACKAGE, DOMAIN_PACKAGE, SERVICE_PACKAGE, FRONTEND_PACKAGE]
     }
 
     @Unroll
-    def "should not allow for Hibernate related dependencies in #module"() {
+    def "Should not allow for Hibernate related dependencies in #module"() {
         expect:
-        assertPackageNotDependsOn(module, "org.hibernate")
+            assertPackageNotDependsOn(module, "org.hibernate")
 
         where:
-        module << [ COMMON_PACKAGE, DOMAIN_PACKAGE, SERVICE_PACKAGE, FRONTEND_PACKAGE ]
+            module << [COMMON_PACKAGE, DOMAIN_PACKAGE, SERVICE_PACKAGE, FRONTEND_PACKAGE]
     }
 
     @Unroll
     def "should not allow for Spring Data related dependencies in #module"() {
         expect:
-        assertPackageNotDependsOn(module, "org.springframework.data")
+            assertPackageNotDependsOn(module, "org.springframework.data")
 
         where:
-        module << [ COMMON_PACKAGE, SERVICE_PACKAGE, FRONTEND_PACKAGE ]
+            module << [COMMON_PACKAGE, SERVICE_PACKAGE, FRONTEND_PACKAGE]
     }
 
     private void assertPackageNotDependsOn(String packageName, String forbiddenPackageName) {
