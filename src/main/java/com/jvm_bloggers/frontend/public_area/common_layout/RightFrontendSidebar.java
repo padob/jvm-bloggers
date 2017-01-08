@@ -1,7 +1,7 @@
 package com.jvm_bloggers.frontend.public_area.common_layout;
 
-import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDto;
-import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDtoService;
+import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssue;
+import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssueFinder;
 import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssuePage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.AbstractLink;
@@ -24,7 +24,7 @@ public class RightFrontendSidebar extends Panel {
     static final DateTimeFormatter PUBLISHED_DATE_FORMATTER = DateTimeFormatter.ISO_DATE;
 
     @SpringBean
-    private NewsletterIssueDtoService newsletterIssueDtoService;
+    private PublishedNewsletterIssueFinder newsletterIssueDtoService;
 
     public RightFrontendSidebar(String id) {
         super(id);
@@ -55,7 +55,7 @@ public class RightFrontendSidebar extends Panel {
         });
     }
 
-    private AbstractLink getLink(NewsletterIssueDto issue) {
+    private AbstractLink getLink(PublishedNewsletterIssue issue) {
         return new BookmarkablePageLink<>("issueLink", NewsletterIssuePage.class,
             NewsletterIssuePage.buildShowIssueParams(issue.number))
             .setBody(Model.of(new StringResourceModel("right.panel.issue.link.label")

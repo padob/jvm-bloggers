@@ -2,8 +2,8 @@ package com.jvm_bloggers.frontend.public_area.all_issues;
 
 import com.jvm_bloggers.frontend.public_area.AbstractFrontendPage;
 import com.jvm_bloggers.frontend.public_area.all_issues.all_issues_panel.AllIssuesPanel;
-import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDto;
-import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDtoService;
+import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssue;
+import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssueFinder;
 import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssuePage;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.link.Link;
@@ -28,7 +28,7 @@ public class AllIssuesPage extends AbstractFrontendPage {
     private static final String ALL_ISSUES_PANEL_ID = "allIssuesPanel";
 
     @SpringBean
-    private NewsletterIssueDtoService newsletterIssueDtoService;
+    private PublishedNewsletterIssueFinder newsletterIssueDtoService;
 
     public AllIssuesPage() {
         SortedMap<String, List<Link<?>>> allIssuesGroups = createAllMonthGroups(
@@ -37,7 +37,7 @@ public class AllIssuesPage extends AbstractFrontendPage {
     }
 
     private SortedMap<String, List<Link<?>>> createAllMonthGroups(
-        NewsletterIssueDtoService newsletterIssueDtoService) {
+            PublishedNewsletterIssueFinder newsletterIssueDtoService) {
         return newsletterIssueDtoService
             .findAllByOrderByPublishedDateDesc().stream()
             .collect(groupingBy(
@@ -46,11 +46,11 @@ public class AllIssuesPage extends AbstractFrontendPage {
                 mapping(this::getLink, toList())));
     }
 
-    private String getIssuesGroupName(NewsletterIssueDto issue) {
+    private String getIssuesGroupName(PublishedNewsletterIssue issue) {
         return getPolishMonthAndYear(issue.publishedDate);
     }
 
-    private Link<?> getLink(NewsletterIssueDto issue) {
+    private Link<?> getLink(PublishedNewsletterIssue issue) {
         return (Link<?>) new BookmarkablePageLink<>("issueLink", NewsletterIssuePage.class,
             NewsletterIssuePage.buildShowIssueParams(issue.number))
             .setBody(Model.of(new StringResourceModel("all.issues.link.label")

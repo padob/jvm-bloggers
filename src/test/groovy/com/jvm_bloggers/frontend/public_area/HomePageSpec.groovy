@@ -2,8 +2,8 @@ package com.jvm_bloggers.frontend.public_area
 
 import com.jvm_bloggers.MockSpringContextAwareSpecification
 import com.jvm_bloggers.frontend.public_area.common_layout.RightFrontendSidebar
-import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDto
-import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDtoService
+import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssue
+import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssueFinder
 import com.jvm_bloggers.frontend.public_area.newsletter_issue.newsletter_panel.NewsletterIssuePanel
 import org.apache.wicket.markup.html.basic.Label
 
@@ -12,7 +12,7 @@ import java.time.LocalDate
 
 class HomePageSpec extends MockSpringContextAwareSpecification {
 
-    NewsletterIssueDtoService newsletterIssueService = Stub(NewsletterIssueDtoService)
+    PublishedNewsletterIssueFinder newsletterIssueService = Stub(PublishedNewsletterIssueFinder)
 
     @Override
     protected void setupContext() {
@@ -21,7 +21,7 @@ class HomePageSpec extends MockSpringContextAwareSpecification {
 
     def "Should display latest issue"() {
         given:
-            NewsletterIssueDto issue = prepareExampleIssue()
+            PublishedNewsletterIssue issue = prepareExampleIssue()
             newsletterIssueService.getLatestIssue() >> Optional.of(issue)
         when:
             tester.startPage(HomePage)
@@ -32,8 +32,8 @@ class HomePageSpec extends MockSpringContextAwareSpecification {
             tester.assertContains("$issue.varia")
     }
 
-    private NewsletterIssueDto prepareExampleIssue() {
-        return new NewsletterIssueDto(
+    private PublishedNewsletterIssue prepareExampleIssue() {
+        return new PublishedNewsletterIssue(
                 22, LocalDate.now(), "Example heading", "Example varia", Collections.emptyList(), Collections.emptyList()
         )
     }
@@ -55,9 +55,9 @@ class HomePageSpec extends MockSpringContextAwareSpecification {
     def "Should list last 5 newsletter issues on right panel"() {
         given:
             mockEmptyLatestIssue()
-            List<NewsletterIssueDto> latestIssues = []
+            List<PublishedNewsletterIssue> latestIssues = []
             (1..5).each {
-                latestIssues.add(NewsletterIssueDto.builder().number(5_000 + it).publishedDate(LocalDate.of(2015, 5, it)).build())
+                latestIssues.add(PublishedNewsletterIssue.builder().number(5_000 + it).publishedDate(LocalDate.of(2015, 5, it)).build())
             }
             newsletterIssueService.findTop5ByOrderByPublishedDateDesc() >> latestIssues
         when:

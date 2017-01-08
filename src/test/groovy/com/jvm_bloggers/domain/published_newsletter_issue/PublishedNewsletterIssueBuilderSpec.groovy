@@ -1,6 +1,9 @@
-package com.jvm_bloggers.frontend.public_area.newsletter_issue
+package com.jvm_bloggers.domain.published_newsletter_issue
 
 import com.jvm_bloggers.core.blogpost_redirect.LinkGenerator
+import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssue
+import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssueBuilder
+import com.jvm_bloggers.domain.published_newsletter_issue.PublishedPost
 import com.jvm_bloggers.entities.blog_posts.Blog
 import com.jvm_bloggers.entities.blog_posts.BlogPost
 import com.jvm_bloggers.entities.blog_posts.BlogType
@@ -12,7 +15,7 @@ import java.time.LocalDate
 
 import static java.time.LocalDateTime.now
 
-class NewsletterIssueDtoBuilderSpec extends Specification {
+class PublishedNewsletterIssueBuilderSpec extends Specification {
 
     static final String SHORT_URL = "http://shortlink.com"
 
@@ -21,7 +24,7 @@ class NewsletterIssueDtoBuilderSpec extends Specification {
     }
 
     @Subject
-    NewsletterIssueDtoBuilder builder = new NewsletterIssueDtoBuilder(generator)
+    PublishedNewsletterIssueBuilder builder = new PublishedNewsletterIssueBuilder(generator)
 
     def "Should convert newsletter issue to its DTO representation"() {
         given:
@@ -30,14 +33,14 @@ class NewsletterIssueDtoBuilderSpec extends Specification {
             NewsletterIssue issue = new NewsletterIssue(1, 2, LocalDate.now(), "Some heading", [post],
                     [blog], "Some varia")
         when:
-            NewsletterIssueDto issueDto = builder.build(issue)
+            PublishedNewsletterIssue publishedIssue = builder.build(issue)
         then:
-            issueDto.heading == issue.getHeading()
-            issueDto.varia == issue.getVaria()
-            issueDto.number == issue.getIssueNumber()
-            issueDto.publishedDate == issue.getPublishedDate()
-            issueDto.newBlogs.first().author == blog.getAuthor()
-            issueDto.posts.first().title == post.getTitle()
+            publishedIssue.heading == issue.getHeading()
+            publishedIssue.varia == issue.getVaria()
+            publishedIssue.number == issue.getIssueNumber()
+            publishedIssue.publishedDate == issue.getPublishedDate()
+            publishedIssue.newBlogs.first().author == blog.getAuthor()
+            publishedIssue.posts.first().title == post.getTitle()
     }
 
     def "Should convert blog post to its DTO representation"() {
@@ -45,13 +48,13 @@ class NewsletterIssueDtoBuilderSpec extends Specification {
             Blog blog = sampleBlog()
             BlogPost post = sampleBlogPost(blog)
         when:
-            BlogPostDto blogPostJson = builder.fromBlogPost(post)
+            PublishedPost publishedPost = builder.fromBlogPost(post)
         then:
-            blogPostJson.url == SHORT_URL
-            blogPostJson.authorName == blog.getAuthor()
-            blogPostJson.authorTwitterHandle == blog.getTwitter()
-            blogPostJson.blogType == BlogTypeDto.fromBlogType(blog.getBlogType())
-            blogPostJson.title == post.getTitle()
+            publishedPost.url == SHORT_URL
+            publishedPost.authorName == blog.getAuthor()
+            publishedPost.authorTwitterHandle == blog.getTwitter()
+            publishedPost.title == post.getTitle()
+            publishedPost.isPersonalBlog
     }
 
     private BlogPost sampleBlogPost(Blog blog) {

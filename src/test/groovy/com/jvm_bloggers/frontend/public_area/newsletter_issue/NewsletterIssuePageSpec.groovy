@@ -1,6 +1,8 @@
 package com.jvm_bloggers.frontend.public_area.newsletter_issue
 
 import com.jvm_bloggers.MockSpringContextAwareSpecification
+import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssue
+import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssueFinder
 import com.jvm_bloggers.frontend.public_area.newsletter_issue.newsletter_panel.NewsletterIssuePanel
 import org.apache.wicket.markup.html.basic.Label
 import org.apache.wicket.request.mapper.parameter.PageParameters
@@ -9,7 +11,7 @@ import java.time.LocalDate
 
 class NewsletterIssuePageSpec extends MockSpringContextAwareSpecification {
 
-    NewsletterIssueDtoService newsletterIssueService = Stub(NewsletterIssueDtoService)
+    PublishedNewsletterIssueFinder newsletterIssueService = Stub(PublishedNewsletterIssueFinder)
 
     @Override
     protected void setupContext() {
@@ -18,7 +20,7 @@ class NewsletterIssuePageSpec extends MockSpringContextAwareSpecification {
 
     def "Should display selected issue"() {
         given:
-            NewsletterIssueDto issue = prepareExampleIssue()
+            PublishedNewsletterIssue issue = prepareExampleIssue()
             newsletterIssueService.findByIssueNumber(issue.number) >> Optional.of(issue)
         when:
 
@@ -30,8 +32,8 @@ class NewsletterIssuePageSpec extends MockSpringContextAwareSpecification {
             tester.assertContains("$issue.varia")
     }
 
-    private NewsletterIssueDto prepareExampleIssue() {
-        return new NewsletterIssueDto(
+    private PublishedNewsletterIssue prepareExampleIssue() {
+        return new PublishedNewsletterIssue(
                 22, LocalDate.now(), "Example heading", "Example varia", Collections.emptyList(), Collections.emptyList()
         )
     }

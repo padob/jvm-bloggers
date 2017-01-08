@@ -1,4 +1,4 @@
-package com.jvm_bloggers.frontend.public_area.newsletter_issue;
+package com.jvm_bloggers.domain.published_newsletter_issue;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.jvm_bloggers.core.blogpost_redirect.LinkGenerator;
@@ -14,42 +14,44 @@ import java.util.stream.Collectors;
 
 @Component
 @AllArgsConstructor(onConstructor = @__(@Autowired))
-public class NewsletterIssueDtoBuilder {
+public class PublishedNewsletterIssueBuilder {
 
     private final LinkGenerator linkGenerator;
 
-    public NewsletterIssueDto build(NewsletterIssue issue) {
-        return NewsletterIssueDto.builder()
+    public PublishedNewsletterIssue build(NewsletterIssue issue) {
+        return PublishedNewsletterIssue.builder()
             .number(issue.getIssueNumber())
             .heading(issue.getHeading())
             .varia(issue.getVaria())
             .publishedDate(issue.getPublishedDate())
-            .newBlogs(BlogDto.fromBlogs(issue.getNewBlogs()))
+            .newBlogs(RecentlyAddedBlog.fromBlogs(issue.getNewBlogs()))
             .posts(fromBlogPosts(issue.getBlogPosts()))
             .build();
     }
 
-    public NewsletterIssueDto build(NewsletterIssueBaseData issue) {
-        return NewsletterIssueDto.builder()
+    public PublishedNewsletterIssue build(NewsletterIssueBaseData issue) {
+        return PublishedNewsletterIssue.builder()
             .number(issue.getIssueNumber())
             .publishedDate(issue.getPublishedDate())
             .build();
     }
 
-    private List<BlogPostDto> fromBlogPosts(List<BlogPost> blogPosts) {
+    private List<PublishedPost> fromBlogPosts(List<BlogPost> blogPosts) {
         return blogPosts.stream()
             .map(this::fromBlogPost)
             .collect(Collectors.toList());
     }
 
     @VisibleForTesting
-    BlogPostDto fromBlogPost(BlogPost blogPost) {
-        return BlogPostDto.builder()
+    PublishedPost fromBlogPost(BlogPost blogPost) {
+        return PublishedPost.builder()
             .url(linkGenerator.generateRedirectLinkFor(blogPost.getUid()))
             .title(blogPost.getTitle())
             .authorName(blogPost.getBlog().getAuthor())
             .authorTwitterHandle(blogPost.getBlog().getTwitter())
-            .blogType(BlogTypeDto.fromBlogType(blogPost.getBlog().getBlogType()))
+            .isPersonalBlog(blogPost.getBlog().isPersonal())
+            .isCompanyBlog(blogPost.getBlog().isCompany())
+            .isVideoChannel(blogPost.getBlog().isVideoChannel())
             .build();
     }
 

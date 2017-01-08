@@ -68,6 +68,14 @@ public class Blog {
         return BlogType.PERSONAL == blogType;
     }
 
+    public boolean isCompany() {
+        return BlogType.COMPANY == blogType;
+    }
+
+    public boolean isVideoChannel() {
+        return BlogType.VIDEOS == blogType;
+    }
+
     public Boolean getDefaultApprovedValue() {
         return isPersonal() ? Boolean.TRUE : null; 
     }

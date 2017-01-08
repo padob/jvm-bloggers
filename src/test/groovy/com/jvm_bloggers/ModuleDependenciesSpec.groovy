@@ -8,7 +8,7 @@ import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
 
-@Ignore
+//@Ignore
 class ModuleDependenciesSpec extends Specification {
 
     static String BASE_PACKAGE = "com.jvm_bloggers"
