@@ -3,13 +3,13 @@ package com.jvm_bloggers.frontend.public_area.newsletter_issue;
 import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssue;
 import com.jvm_bloggers.frontend.public_area.AbstractFrontendPage;
 import com.jvm_bloggers.frontend.public_area.newsletter_issue.newsletter_panel.NewsletterIssuePanel;
+
 import javaslang.control.Option;
+
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.wicketstuff.annotation.mount.MountPath;
-
-import java.util.Optional;
 
 @MountPath("issue")
 public class NewsletterIssuePage extends AbstractFrontendPage {

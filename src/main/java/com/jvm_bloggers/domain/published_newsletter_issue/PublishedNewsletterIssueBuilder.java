@@ -5,12 +5,12 @@ import com.jvm_bloggers.core.blogpost_redirect.LinkGenerator;
 import com.jvm_bloggers.entities.blog_posts.BlogPost;
 import com.jvm_bloggers.entities.newsletter_issues.NewsletterIssue;
 import com.jvm_bloggers.entities.newsletter_issues.NewsletterIssueBaseData;
+
+import javaslang.collection.List;
+
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 @AllArgsConstructor(onConstructor = @__(@Autowired))
@@ -24,8 +24,8 @@ public class PublishedNewsletterIssueBuilder {
             .heading(issue.getHeading())
             .varia(issue.getVaria())
             .publishedDate(issue.getPublishedDate())
-            .newBlogs(RecentlyAddedBlog.fromBlogs(issue.getNewBlogs()))
-            .posts(fromBlogPosts(issue.getBlogPosts()))
+            .newBlogs(RecentlyAddedBlog.fromBlogs(List.ofAll(issue.getNewBlogs())))
+            .posts(fromBlogPosts(List.ofAll(issue.getBlogPosts())))
             .build();
     }
 
@@ -37,9 +37,9 @@ public class PublishedNewsletterIssueBuilder {
     }
 
     private List<PublishedPost> fromBlogPosts(List<BlogPost> blogPosts) {
-        return blogPosts.stream()
+        return blogPosts
             .map(this::fromBlogPost)
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @VisibleForTesting

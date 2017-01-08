@@ -1,10 +1,10 @@
 package com.jvm_bloggers.domain.published_newsletter_issue;
 
 import com.jvm_bloggers.entities.blog_posts.Blog;
-import lombok.Builder;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import javaslang.collection.List;
+
+import lombok.Builder;
 
 @Builder
 public class RecentlyAddedBlog {
@@ -29,8 +29,6 @@ public class RecentlyAddedBlog {
     }
 
     static List<RecentlyAddedBlog> fromBlogs(List<Blog> blogs) {
-        return blogs.stream()
-                .map(RecentlyAddedBlog::fromBlog)
-                .collect(Collectors.toList());
+        return blogs.map(RecentlyAddedBlog::fromBlog).toList();
     }
 }

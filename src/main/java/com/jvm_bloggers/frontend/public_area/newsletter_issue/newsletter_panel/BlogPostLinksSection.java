@@ -1,13 +1,14 @@
 package com.jvm_bloggers.frontend.public_area.newsletter_issue.newsletter_panel;
 
 import com.jvm_bloggers.domain.published_newsletter_issue.PublishedPost;
+
+import javaslang.collection.List;
+
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
-
-import java.util.List;
 
 public class BlogPostLinksSection extends Panel {
 
@@ -16,7 +17,7 @@ public class BlogPostLinksSection extends Panel {
     public BlogPostLinksSection(String id, String heading, List<PublishedPost> blogPosts) {
         super(id);
         add(new Label("sectionHeading", heading));
-        add(new ListView<PublishedPost>("postItems", blogPosts) {
+        add(new ListView<PublishedPost>("postItems", blogPosts.toJavaList()) {
             @Override
             protected void populateItem(ListItem<PublishedPost> item) {
                 PublishedPost post = item.getModelObject();

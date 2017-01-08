@@ -1,19 +1,32 @@
 package com.jvm_bloggers.frontend.public_area.all_issues.all_issues_panel;
 
-import org.apache.wicket.markup.html.link.Link;
+import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssue;
+
+import javaslang.Tuple2;
+import javaslang.collection.List;
+
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.markup.repeater.RepeatingView;
 
-import java.util.List;
-import java.util.Map;
+import java.time.YearMonth;
 
 public class AllIssuesPanel extends Panel {
 
-    public AllIssuesPanel(String id, Map<String, List<Link<?>>> allIssuesGroups) {
+    public AllIssuesPanel(String id, List<Tuple2<YearMonth, List<PublishedNewsletterIssue>>> 
+            issuesGroupedByYearMonth) {
         super(id);
         RepeatingView issuesInMonth = new RepeatingView("issuesInMonthPanel");
-        allIssuesGroups.forEach((key, value) -> issuesInMonth
-            .add(new IssuesInMonthPanel(issuesInMonth.newChildId(), key, value)));
+        issuesGroupedByYearMonth.forEach(tuple -> {
+                issuesInMonth.add(
+                    new IssuesInMonthPanel(
+                        issuesInMonth.newChildId(), 
+                        tuple._1, 
+                        tuple._2.sortBy(i -> i.publishedDate)
+                    )
+                );
+            }
+        );
         add(issuesInMonth);
     }
+    
 }

@@ -1,14 +1,11 @@
 package com.jvm_bloggers.domain.published_newsletter_issue;
 
 
+import javaslang.collection.List;
+
 import lombok.Builder;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static java.util.stream.Collectors.toList;
-
 
 @Builder
 public class PublishedNewsletterIssue {
@@ -21,15 +18,15 @@ public class PublishedNewsletterIssue {
     public List<RecentlyAddedBlog> newBlogs;
 
     public List<PublishedPost> getPersonalPosts() {
-        return posts.stream().filter(post -> post.isPersonalBlog).collect(toList());
+        return posts.filter(post -> post.isPersonalBlog).toList();
     }
 
     public List<PublishedPost> getCompaniesPosts() {
-        return posts.stream().filter(post -> post.isCompanyBlog).collect(toList());
+        return posts.filter(post -> post.isCompanyBlog).toList();
     }
 
     public List<PublishedPost> getVideos() {
-        return posts.stream().filter(post -> post.isVideoChannel).collect(toList());
+        return posts.filter(post -> post.isVideoChannel).toList();
     }
 
 }

@@ -1,8 +1,10 @@
 package com.jvm_bloggers.frontend.public_area.common_layout;
 
 import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssue;
-import com.jvm_bloggers.domain.published_newsletter_issue.PublishedNewsletterIssueFinder;
 import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssuePage;
+
+import javaslang.collection.List;
+
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.AbstractLink;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -15,16 +17,13 @@ import org.apache.wicket.model.StringResourceModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.stream.Collectors;
-
 
 public class RightFrontendSidebar extends Panel {
 
     static final DateTimeFormatter PUBLISHED_DATE_FORMATTER = DateTimeFormatter.ISO_DATE;
 
     @SpringBean
-    private PublishedNewsletterIssueFinder newsletterIssueDtoService;
+    private RightFrontendSidebarRequestHandler requestHandler;
 
     public RightFrontendSidebar(String id) {
         super(id);
@@ -37,9 +36,10 @@ public class RightFrontendSidebar extends Panel {
     }
 
     private void composeLatestFiveNewsletterIssuesLinksView() {
-        List<AbstractLink> latestIssues = newsletterIssueDtoService
-            .findTop5ByOrderByPublishedDateDesc().stream().map(this::getLink)
-            .collect(Collectors.toList());
+        List<AbstractLink> latestIssues = requestHandler
+            .findLatestFiveIssues()
+            .map(this::getLink)
+            .toList();
 
         if (latestIssues.isEmpty()) {
             add(new Label("latestIssuesEmptyLabel", getString("right.panel.latest.issues.empty")));
@@ -47,7 +47,7 @@ public class RightFrontendSidebar extends Panel {
             add(new EmptyPanel("latestIssuesEmptyLabel"));
         }
 
-        add(new ListView<AbstractLink>("latestIssuesList", latestIssues) {
+        add(new ListView<AbstractLink>("latestIssuesList", latestIssues.toJavaList()) {
             @Override
             protected void populateItem(ListItem<AbstractLink> item) {
                 item.add(item.getModelObject());

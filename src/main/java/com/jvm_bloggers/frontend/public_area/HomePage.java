@@ -18,7 +18,7 @@ public class HomePage extends AbstractFrontendPage {
         if (latestIssue.isDefined()) {
             add(new NewsletterIssuePanel(LATEST_ISSUE_PANEL_ID, latestIssue.get()));
         } else {
-            add(new Label(LATEST_ISSUE_PANEL_ID, "Nie znalezion żadnego newslettera"));
+            add(new Label(LATEST_ISSUE_PANEL_ID, "Nie znalezion żadnego wydania"));
         }
     }
 
