@@ -15,7 +15,7 @@ class LastFiveIssuesQuerySpec extends NewsletterIssueRepositorySpecBase {
         when:
             List<NewsletterIssueBaseData> lastFiveIssues = newsletterIssueRepository.findTop5ByOrderByPublishedDateDesc()
         then:
-            lastFiveIssues.size == 5
+            lastFiveIssues.size() == 5
             lastFiveIssues.containsAll(lastTenIssues.stream().skip(5).collect(Collectors.toList()))
     }
 
