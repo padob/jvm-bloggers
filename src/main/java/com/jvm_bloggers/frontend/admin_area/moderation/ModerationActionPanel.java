@@ -1,7 +1,7 @@
 package com.jvm_bloggers.frontend.admin_area.moderation;
 
 import com.jvm_bloggers.common.utils.NowProvider;
-import com.jvm_bloggers.entities.blog_posts.BlogPost;
+import com.jvm_bloggers.domain.posts_to_moderate.BlogPostToModerate;
 import com.jvm_bloggers.entities.blog_posts.BlogPostRepository;
 import com.jvm_bloggers.frontend.admin_area.panels.CustomFeedbackPanel;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +24,7 @@ class ModerationActionPanel extends Panel {
 
     ModerationActionPanel(String id, Form<Void> moderationForm,
                                  CustomFeedbackPanel feedback,
-                                 IModel<? extends BlogPost> blogPostModel) {
+                                 IModel<BlogPostToModerate> blogPostModel) {
         super(id);
         add(createAcceptButton(moderationForm, feedback, blogPostModel));
         add(createRejectButton(moderationForm, feedback, blogPostModel));
@@ -32,16 +32,16 @@ class ModerationActionPanel extends Panel {
 
     private AjaxButton createRejectButton(final Form<Void> moderationForm,
                                           final CustomFeedbackPanel feedback,
-                                          final IModel<? extends BlogPost> blogPostModel) {
+                                          final IModel<BlogPostToModerate> blogPostModel) {
         AjaxButton rejectPost = new AjaxButton("rejectPost", moderationForm) {
 
             @Override
             protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
                 log.debug("Reject clicked");
-                BlogPost blogPost = blogPostModel.getObject();
-                blogPost.reject();
+                BlogPostToModerate blogPost = blogPostModel.getObject();
+//                blogPost.reject();
                 long start = System.currentTimeMillis();
-                blogPostRepository.save(blogPost);
+//                blogPostRepository.save(blogPost);
                 long stop = System.currentTimeMillis();
                 log.debug("Persist rejected post execution time = " + (stop - start)  + " ms");
                 getSession().success("Blog post '" +  blogPost.getTitle() + "' rejected!");
@@ -55,16 +55,16 @@ class ModerationActionPanel extends Panel {
 
     private AjaxButton createAcceptButton(final Form<Void> moderationForm,
                                           final CustomFeedbackPanel feedback,
-                                          final IModel<? extends BlogPost> blogPostModel) {
+                                          final IModel<BlogPostToModerate> blogPostModel) {
         AjaxButton acceptPost = new AjaxButton("acceptPost", moderationForm) {
 
             @Override
             protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
                 log.debug("Accept clicked");
-                BlogPost blogPost = blogPostModel.getObject();
-                blogPost.approve(nowProvider.now());
+                BlogPostToModerate blogPost = blogPostModel.getObject();
+//                blogPost.approve(nowProvider.now());
                 long start = System.currentTimeMillis();
-                blogPostRepository.save(blogPost);
+//                blogPostRepository.save(blogPost);
                 long stop = System.currentTimeMillis();
                 log.debug("Persist approved post execution time = " + (stop - start)  + " ms");
                 getSession().success("Blog post '" +  blogPost.getTitle() + "' accepted!");

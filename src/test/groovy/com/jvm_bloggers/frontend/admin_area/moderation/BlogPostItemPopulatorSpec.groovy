@@ -6,7 +6,7 @@ import com.jvm_bloggers.entities.blog_posts.Blog
 import com.jvm_bloggers.entities.blog_posts.BlogPost
 import com.jvm_bloggers.entities.blog_posts.BlogPostRepository
 import com.jvm_bloggers.entities.blog_posts.BlogType
-import com.jvm_bloggers.frontend.admin_area.blogs.BlogPostModel
+import com.jvm_bloggers.frontend.admin_area.blogs.BlogPostToModerateModel
 import org.apache.wicket.behavior.AttributeAppender
 import org.apache.wicket.markup.repeater.Item
 import spock.lang.Subject
@@ -69,7 +69,7 @@ class BlogPostItemPopulatorSpec extends MockSpringContextAwareSpecification {
     }
 
     private Item<BlogPost> createBlogPostItem(BlogPost blogPost) {
-        return new Item<>("itemId", 1, new BlogPostModel(blogPost))
+        return new Item<>("itemId", 1, new BlogPostToModerateModel(blogPost))
     }
 
     @Override

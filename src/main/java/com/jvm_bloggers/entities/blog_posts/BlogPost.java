@@ -83,20 +83,6 @@ public class BlogPost {
         return approved != null;
     }
 
-    public String getApprovalState() {
-        if (approved == null) {
-            return " -- ";
-        } else if (approved) {
-            return "Approved";
-        } else {
-            return "Rejected";
-        }
-    }
-
-    public boolean isGoingInNewsletter(final LocalDateTime lastPublicationDate) {
-        return isApproved() && approvedDate.isAfter(lastPublicationDate);
-    }
-
     private static String generateRandomUid() {
         return RandomStringUtils.randomAlphanumeric(UID_LENGTH);
     }

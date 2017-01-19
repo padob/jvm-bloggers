@@ -1,10 +1,11 @@
 package com.jvm_bloggers.frontend.admin_area.blogs;
 
-import com.jvm_bloggers.entities.blog_posts.BlogPost;
-import com.jvm_bloggers.entities.blog_posts.BlogPostRepository;
+import com.jvm_bloggers.domain.posts_to_moderate.BlogPostToModerate;
+import com.jvm_bloggers.domain.posts_to_moderate.BlogPostToModerateFinder;
 import com.jvm_bloggers.entities.blog_posts.BlogRepository;
 import com.jvm_bloggers.frontend.admin_area.AbstractAdminPage;
 import com.jvm_bloggers.frontend.admin_area.panels.CustomPagingNavigator;
+
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.repeater.Item;
@@ -23,7 +24,8 @@ public class BlogPostsPage extends AbstractAdminPage {
     static final String HEADER_ID = "header";
 
     @SpringBean
-    private BlogPostRepository blogPostRepository;
+    // TODO: Tomasz Dziurko: replace it with a dedicated finder 
+    private BlogPostToModerateFinder blogPostToModerateFinder;
 
     @SpringBean
     private BlogRepository blogRepository;
@@ -33,27 +35,27 @@ public class BlogPostsPage extends AbstractAdminPage {
     public BlogPostsPage(PageParameters parameters) {
         requestHandler = new BlogPostsPageRequestHandler(
             paginationConfiguration,
-            blogPostRepository,
+            blogPostToModerateFinder,
             blogRepository,
             parameters.get(BLOG_ID_PARAM).toLong(-1));
 
-        DataView<BlogPost> blogPotsDataView = createBlogPostDataView();
+        DataView<BlogPostToModerate> blogPotsDataView = createBlogPostDataView();
         add(new Label(HEADER_ID, requestHandler.getPageHeader()));
         add(blogPotsDataView);
         add(new CustomPagingNavigator("navigator", blogPotsDataView));
     }
 
-    private DataView<BlogPost> createBlogPostDataView() {
-        return new DataView<BlogPost>(
+    private DataView<BlogPostToModerate> createBlogPostDataView() {
+        return new DataView<BlogPostToModerate>(
             "blogPostsDataView", requestHandler, defaultPaginationSize) {
 
             @Override
-            protected void populateItem(Item<BlogPost> item) {
-                BlogPost post = item.getModelObject();
+            protected void populateItem(Item<BlogPostToModerate> item) {
+                BlogPostToModerate post = item.getModelObject();
                 item.add(new Label("title", post.getTitle()));
-                item.add(new Label("author", post.getBlog().getAuthor()));
+                item.add(new Label("author", post.getAuthorName()));
                 item.add(new ExternalLink("link", post.getUrl(), abbreviate(post.getUrl(), 90)));
-                item.add(new Label("date", post.getPublishedDate().format(DATE_TIME_FORMATTER)));
+                item.add(new Label("date", post.getDatePublished().format(DATE_TIME_FORMATTER)));
                 item.add(new Label("approved", post.getApprovalState()));
             }
         };

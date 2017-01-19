@@ -1,29 +1,32 @@
 package com.jvm_bloggers.frontend.admin_area.blogs;
 
-import com.jvm_bloggers.entities.blog_posts.BlogPost;
-import com.jvm_bloggers.entities.blog_posts.BlogPostRepository;
+import com.jvm_bloggers.domain.posts_to_moderate.BlogPostToModerate;
+import com.jvm_bloggers.domain.posts_to_moderate.BlogPostToModerateFinder;
+
 import lombok.extern.slf4j.Slf4j;
+
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
 @Slf4j
-public class BlogPostModel extends LoadableDetachableModel<BlogPost> {
+public class BlogPostToModerateModel extends LoadableDetachableModel<BlogPostToModerate> {
 
     @SpringBean
-    private BlogPostRepository blogPostRepository;
+    private BlogPostToModerateFinder finder;
 
     private Long blogPostId;
 
-    public BlogPostModel(BlogPost blogPost) {
+    public BlogPostToModerateModel(BlogPostToModerate blogPost) {
         super(blogPost);
         Injector.get().inject(this);
         blogPostId = blogPost.getId();
     }
 
     @Override
-    protected BlogPost load() {
+    protected BlogPostToModerate load() {
         log.debug("Loading post with id " + blogPostId);
-        return blogPostRepository.findOne(blogPostId);
+        return finder.findById(blogPostId);
     }
+    
 }

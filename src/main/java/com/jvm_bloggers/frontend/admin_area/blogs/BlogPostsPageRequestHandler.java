@@ -1,10 +1,12 @@
 package com.jvm_bloggers.frontend.admin_area.blogs;
 
-import com.jvm_bloggers.entities.blog_posts.BlogPost;
-import com.jvm_bloggers.entities.blog_posts.BlogPostRepository;
+import com.jvm_bloggers.domain.posts_to_moderate.BlogPostToModerate;
+import com.jvm_bloggers.domain.posts_to_moderate.BlogPostToModerateFinder;
 import com.jvm_bloggers.entities.blog_posts.BlogRepository;
 import com.jvm_bloggers.frontend.admin_area.PaginationConfiguration;
+
 import lombok.RequiredArgsConstructor;
+
 import org.apache.wicket.markup.repeater.data.IDataProvider;
 import org.apache.wicket.model.IModel;
 import org.springframework.data.domain.PageRequest;
@@ -13,17 +15,17 @@ import java.util.Iterator;
 import java.util.Optional;
 
 @RequiredArgsConstructor
-public class BlogPostsPageRequestHandler implements IDataProvider<BlogPost> {
+public class BlogPostsPageRequestHandler implements IDataProvider<BlogPostToModerate> {
 
     private final PaginationConfiguration paginationConfiguration;
-    private final BlogPostRepository blogPostRepository;
+    private final BlogPostToModerateFinder blogPostToModerateFinder;
     private final BlogRepository blogRepository;
     private final Long blogId;
 
     @Override
-    public Iterator<? extends BlogPost> iterator(long first, long count) {
+    public Iterator<? extends BlogPostToModerate> iterator(long first, long count) {
         int page = Long.valueOf(first / paginationConfiguration.getDefaultPageSize()).intValue();
-        return blogPostRepository
+        return blogPostToModerateFinder
             .findByBlogIdOrderByPublishedDateDesc(blogId, new PageRequest(page,
                 paginationConfiguration.getDefaultPageSize())
             ).iterator();
@@ -31,12 +33,12 @@ public class BlogPostsPageRequestHandler implements IDataProvider<BlogPost> {
 
     @Override
     public long size() {
-        return blogPostRepository.countByBlogId(blogId);
+        return blogPostToModerateFinder.countByBlogId(blogId);
     }
 
     @Override
-    public IModel<BlogPost> model(BlogPost blog) {
-        return new BlogPostModel(blog);
+    public IModel<BlogPostToModerate> model(BlogPostToModerate post) {
+        return new BlogPostToModerateModel(post);
     }
 
     @Override
