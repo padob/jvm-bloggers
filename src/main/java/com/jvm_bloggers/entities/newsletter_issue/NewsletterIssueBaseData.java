@@ -9,4 +9,5 @@ public interface NewsletterIssueBaseData {
     Long getIssueNumber();
 
     LocalDate getPublishedDate();
+    
 }

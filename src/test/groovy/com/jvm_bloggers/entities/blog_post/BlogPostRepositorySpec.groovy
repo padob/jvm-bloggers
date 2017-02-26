@@ -46,7 +46,7 @@ class BlogPostRepositorySpec extends SpringContextAwareSpecification {
         when:
             List<BlogPost> latestPosts = blogPostRepository.findLatestPosts(PAGEABLE)
         then:
-            // not moderated posts first ...
+            // not moderated publishedPosts first ...
             !latestPosts[0].isModerated()
             !latestPosts[1].isModerated()
             latestPosts[0].getPublishedDate().isAfter(latestPosts[1].getPublishedDate())

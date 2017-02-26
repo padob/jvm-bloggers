@@ -2440,8 +2440,8 @@
                         ii = mmax(p.length, p2 && p2.length || 0);
                     }
                 },
-                pcoms1 = [], // path commands of original path p
-                pcoms2 = [], // path commands of original path p2
+                pcoms1 = [], // path command of original path p
+                pcoms2 = [], // path command of original path p2
                 pfirst = "", // temporary holder for original path command
                 pcom = ""; // holder for previous path command of original path
             for (var i = 0, ii = mmax(p.length, p2 && p2.length || 0); i < ii; i++) {
@@ -3748,11 +3748,11 @@
      * Creates a path element by given path data string.
      > Parameters
      - pathString (string) #optional path string in SVG format.
-     * Path string consists of one-letter commands, followed by comma seprarated arguments in numercal form. Example:
+     * Path string consists of one-letter command, followed by comma seprarated arguments in numercal form. Example:
      | "M10,20L30,40"
-     * Here we can see two commands: “M”, with arguments `(10, 20)` and “L” with arguments `(30, 40)`. Upper case letter mean command is absolute, lower case—relative.
+     * Here we can see two command: “M”, with arguments `(10, 20)` and “L” with arguments `(30, 40)`. Upper case letter mean command is absolute, lower case—relative.
      *
-     # <p>Here is short list of commands available, for more details see <a href="http://www.w3.org/TR/SVG/paths.html#PathData" title="Details of a path's data attribute's format are described in the SVG specification.">SVG path string format</a>.</p>
+     # <p>Here is short list of command available, for more details see <a href="http://www.w3.org/TR/SVG/paths.html#PathData" title="Details of a path's data attribute's format are described in the SVG specification.">SVG path string format</a>.</p>
      # <table><thead><tr><th>Command</th><th>Name</th><th>Parameters</th></tr></thead><tbody>
      # <tr><td>M</td><td>moveto</td><td>(x y)+</td></tr>
      # <tr><td>Z</td><td>closepath</td><td>(none)</td></tr>
@@ -3766,7 +3766,7 @@
      # <tr><td>A</td><td>elliptical arc</td><td>(rx ry x-axis-rotation large-arc-flag sweep-flag x y)+</td></tr>
      # <tr><td>R</td><td><a href="http://en.wikipedia.org/wiki/Catmull–Rom_spline#Catmull.E2.80.93Rom_spline">Catmull-Rom curveto</a>*</td><td>x1 y1 (x y)+</td></tr></tbody></table>
      * * “Catmull-Rom curveto” is a not standard SVG command and added in 2.0 to make life easier.
-     * Note: there is a special case when path consist of just three commands: “M10,10R…z”. In this case path will smoothly connects to its beginning.
+     * Note: there is a special case when path consist of just three command: “M10,10R…z”. In this case path will smoothly connects to its beginning.
      > Usage
      | var c = paper.path("M10 10L90 90");
      | // draw a diagonal line:
@@ -6624,13 +6624,13 @@
      * i.e. translation doesn’t change `x` or `y` of the rectange. The format
      * of transformation string is similar to the path string syntax:
      | "t100,100r30,100,100s2,2,100,100r45s1.5"
-     * Each letter is a command. There are four commands: `t` is for translate, `r` is for rotate, `s` is for
+     * Each letter is a command. There are four command: `t` is for translate, `r` is for rotate, `s` is for
      * scale and `m` is for matrix.
      *
      * There are also alternative “absolute” translation, rotation and scale: `T`, `R` and `S`. They will not take previous transformation into account. For example, `...T100,0` will always move element 100 px horisontally, while `...t100,0` could move it vertically if there is `r90` before. Just compare results of `r90t100,0` and `r90T100,0`.
      *
      * So, the example line above could be read like “translate by 100, 100; rotate 30° around 100, 100; scale twice around 100, 100;
-     * rotate 45° around centre; scale 1.5 times relative to centre”. As you can see rotate and scale commands have origin
+     * rotate 45° around centre; scale 1.5 times relative to centre”. As you can see rotate and scale command have origin
      * coordinates as optional parameters, the default is the centre point of the element.
      * Matrix accepts six parameters.
      > Usage

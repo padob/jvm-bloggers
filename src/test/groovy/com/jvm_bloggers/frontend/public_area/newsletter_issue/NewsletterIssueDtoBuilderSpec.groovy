@@ -1,6 +1,10 @@
 package com.jvm_bloggers.frontend.public_area.newsletter_issue
 
 import com.jvm_bloggers.core.blogpost_redirect.LinkGenerator
+import com.jvm_bloggers.core.query.PublishedPost
+import com.jvm_bloggers.core.query.BlogTypeDto
+import com.jvm_bloggers.core.query.PublishedNewsletterIssue
+import com.jvm_bloggers.core.query.PublishedNewsletterIssueBuilder
 import com.jvm_bloggers.entities.blog.Blog
 import com.jvm_bloggers.entities.blog.BlogType
 import com.jvm_bloggers.entities.blog_post.BlogPost
@@ -21,23 +25,23 @@ class NewsletterIssueDtoBuilderSpec extends Specification {
     }
 
     @Subject
-    NewsletterIssueDtoBuilder builder = new NewsletterIssueDtoBuilder(generator)
+    PublishedNewsletterIssueBuilder builder = new PublishedNewsletterIssueBuilder(generator)
 
     def "Should convert newsletter issue to its DTO representation"() {
         given:
             Blog blog = sampleBlog()
             BlogPost post = sampleBlogPost(blog)
-            NewsletterIssue issue = new NewsletterIssue(1, 2, LocalDate.now(), "Some heading", [post],
-                    [blog], "Some varia")
+            NewsletterIssue issue = new NewsletterIssue(1, 2, LocalDate.now(), "Some headingSection", [post],
+                    [blog], "Some variaSection")
         when:
-            NewsletterIssueDto issueDto = builder.build(issue)
+            PublishedNewsletterIssue issueDto = builder.build(issue)
         then:
-            issueDto.heading == issue.getHeading()
-            issueDto.varia == issue.getVaria()
+            issueDto.headingSection == issue.getHeading()
+            issueDto.variaSection == issue.getVaria()
             issueDto.number == issue.getIssueNumber()
             issueDto.publishedDate == issue.getPublishedDate()
             issueDto.newBlogs.first().author == blog.getAuthor()
-            issueDto.posts.first().title == post.getTitle()
+            issueDto.publishedPosts.first().title == post.getTitle()
     }
 
     def "Should convert blog post to its DTO representation"() {
@@ -45,7 +49,7 @@ class NewsletterIssueDtoBuilderSpec extends Specification {
             Blog blog = sampleBlog()
             BlogPost post = sampleBlogPost(blog)
         when:
-            BlogPostDto blogPostJson = builder.fromBlogPost(post)
+            PublishedPost blogPostJson = builder.fromBlogPost(post)
         then:
             blogPostJson.url == SHORT_URL
             blogPostJson.authorName == blog.getAuthor()

@@ -1,6 +1,6 @@
 package com.jvm_bloggers.frontend.public_area.common_layout;
 
-import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDto;
+import com.jvm_bloggers.core.query.PublishedNewsletterIssue;
 import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDtoService;
 import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssuePage;
 import org.apache.wicket.markup.html.basic.Label;
@@ -54,7 +54,7 @@ public class RightFrontendSidebar extends Panel {
         });
     }
 
-    private AbstractLink getLink(NewsletterIssueDto issue) {
+    private AbstractLink getLink(PublishedNewsletterIssue issue) {
         return new BookmarkablePageLink<>("issueLink", NewsletterIssuePage.class,
             NewsletterIssuePage.buildShowIssueParams(issue.number))
             .setBody(Model.of(new StringResourceModel("right.panel.issue.link.label")

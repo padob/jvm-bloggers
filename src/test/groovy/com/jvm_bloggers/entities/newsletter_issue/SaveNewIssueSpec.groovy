@@ -2,13 +2,14 @@ package com.jvm_bloggers.entities.newsletter_issue
 
 import com.jvm_bloggers.entities.blog.Blog
 import com.jvm_bloggers.entities.blog_post.BlogPost
+import javaslang.control.Option
 
 class SaveNewIssueSpec extends NewsletterIssueRepositorySpecBase {
 
     def "Should save new issue"() {
         given:
-            String exampleHeading = "Example heading"
-            String exampleVaria = "Example varia"
+            String exampleHeading = "Example headingSection"
+            String exampleVaria = "Example variaSection"
             long issueNumber = 77L
         and:
             List<Blog> blogs = prepareBlogs()
@@ -17,9 +18,9 @@ class SaveNewIssueSpec extends NewsletterIssueRepositorySpecBase {
         when:
             newsletterIssueRepository.save(issue)
         then:
-            Optional<NewsletterIssue> persistedIssue =
+            Option<NewsletterIssue> persistedIssue =
                     newsletterIssueRepository.findByIssueNumber(issue.getIssueNumber())
-            persistedIssue.isPresent()
+            persistedIssue.isDefined()
             with(persistedIssue.get()){
                 blogPosts
                 issueNumber == issueNumber

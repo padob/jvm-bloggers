@@ -1,5 +1,7 @@
 package com.jvm_bloggers.frontend.public_area.newsletter_issue
 
+import com.jvm_bloggers.core.query.NewPublishedBlog
+import com.jvm_bloggers.core.query.BlogTypeDto
 import com.jvm_bloggers.entities.blog.Blog
 import com.jvm_bloggers.entities.blog.BlogType
 import spock.lang.Specification
@@ -13,7 +15,7 @@ class BlogDtoSpec extends Specification {
             Blog blog = new Blog(1, 2, "some author", "some rss", "some url",
                     "some twitter", now(), BlogType.PERSONAL, true)
         when:
-            BlogDto blogJson = BlogDto.fromBlog(blog)
+            NewPublishedBlog blogJson = NewPublishedBlog.fromBlog(blog)
         then:
             blogJson.author == blog.getAuthor()
             blogJson.url == blog.getUrl()

@@ -1,7 +1,10 @@
 package com.jvm_bloggers.frontend.public_area.newsletter_issue;
 
+import com.jvm_bloggers.core.query.PublishedNewsletterIssue;
+import com.jvm_bloggers.core.query.PublishedNewsletterIssueBuilder;
 import com.jvm_bloggers.entities.newsletter_issue.NewsletterIssue;
 import com.jvm_bloggers.entities.newsletter_issue.NewsletterIssueRepository;
+import javaslang.control.Option;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -15,27 +18,27 @@ import java.util.stream.Collectors;
 public class NewsletterIssueDtoService {
 
     private final NewsletterIssueRepository newsletterIssueRepository;
-    private final NewsletterIssueDtoBuilder newsletterIssueDtoBuilder;
+    private final PublishedNewsletterIssueBuilder publishedNewsletterIssueBuilder;
 
-    public Optional<NewsletterIssueDto> getLatestIssue() {
+    public Optional<PublishedNewsletterIssue> getLatestIssue() {
         Optional<NewsletterIssue> latestIssue = newsletterIssueRepository
             .findFirstByOrderByPublishedDateDesc();
-        return latestIssue.map(newsletterIssueDtoBuilder::build);
+        return latestIssue.map(publishedNewsletterIssueBuilder::build);
     }
 
-    public Optional<NewsletterIssueDto> findByIssueNumber(long issueNumber) {
-        Optional<NewsletterIssue> issue = newsletterIssueRepository.findByIssueNumber(issueNumber);
-        return issue.map(newsletterIssueDtoBuilder::build);
+    public Option<PublishedNewsletterIssue> findByIssueNumber(long issueNumber) {
+        Option<NewsletterIssue> issue = newsletterIssueRepository.findByIssueNumber(issueNumber);
+        return issue.map(publishedNewsletterIssueBuilder::build);
     }
 
-    public List<NewsletterIssueDto> findTop5ByOrderByPublishedDateDesc() {
+    public List<PublishedNewsletterIssue> findTop5ByOrderByPublishedDateDesc() {
         return newsletterIssueRepository.findTop5ByOrderByPublishedDateDesc()
-            .stream().map(newsletterIssueDtoBuilder::build).collect(Collectors.toList());
+            .stream().map(publishedNewsletterIssueBuilder::build).collect(Collectors.toList());
     }
 
-    public List<NewsletterIssueDto> findAllByOrderByPublishedDateDesc() {
+    public List<PublishedNewsletterIssue> findAllByOrderByPublishedDateDesc() {
         return newsletterIssueRepository.findAllByOrderByPublishedDateDesc().stream()
-            .map(newsletterIssueDtoBuilder::build)
+            .map(publishedNewsletterIssueBuilder::build)
             .collect(Collectors.toList());
     }
 

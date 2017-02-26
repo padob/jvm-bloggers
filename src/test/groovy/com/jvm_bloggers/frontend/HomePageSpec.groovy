@@ -2,7 +2,7 @@ package com.jvm_bloggers.frontend
 
 import com.jvm_bloggers.MockSpringContextAwareSpecification
 import com.jvm_bloggers.frontend.public_area.HomePage
-import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDto
+import com.jvm_bloggers.core.query.PublishedNewsletterIssue
 import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDtoService
 import com.jvm_bloggers.frontend.public_area.newsletter_issue.newsletter_panel.NewsletterIssuePanel
 import com.jvm_bloggers.utils.DateTimeUtilities
@@ -22,20 +22,20 @@ class HomePageSpec extends MockSpringContextAwareSpecification {
 
     def "Should display latest issue"() {
         given:
-            NewsletterIssueDto issue = prepareExampleIssue()
+            PublishedNewsletterIssue issue = prepareExampleIssue()
             newsletterIssueService.getLatestIssue() >> Optional.of(issue)
         when:
             tester.startPage(HomePage)
         then:
             tester.assertComponent(HomePage.LATEST_ISSUE_PANEL_ID, NewsletterIssuePanel)
             tester.assertContains("Wydanie #$issue.number")
-            tester.assertContains("$issue.heading")
-            tester.assertContains("$issue.varia")
+            tester.assertContains("$issue.headingSection")
+            tester.assertContains("$issue.variaSection")
     }
 
-    private NewsletterIssueDto prepareExampleIssue() {
-        return new NewsletterIssueDto(
-                22, LocalDate.now(), "Example heading", "Example varia", Collections.emptyList(), Collections.emptyList()
+    private PublishedNewsletterIssue prepareExampleIssue() {
+        return new PublishedNewsletterIssue(
+                22, LocalDate.now(), "Example headingSection", "Example variaSection", Collections.emptyList(), Collections.emptyList()
         )
     }
 
@@ -56,9 +56,9 @@ class HomePageSpec extends MockSpringContextAwareSpecification {
     def "Should list last 5 newsletter issues on right panel"() {
         given:
             mockEmptyLatestIssue()
-            List<NewsletterIssueDto> latestIssues = []
+            List<PublishedNewsletterIssue> latestIssues = []
             (1..5).each {
-                latestIssues.add(NewsletterIssueDto.builder().number(5_000 + it).publishedDate(LocalDate.of(2015, 5, it)).build())
+                latestIssues.add(PublishedNewsletterIssue.builder().number(5_000 + it).publishedDate(LocalDate.of(2015, 5, it)).build())
             }
             newsletterIssueService.findTop5ByOrderByPublishedDateDesc() >> latestIssues
         when:

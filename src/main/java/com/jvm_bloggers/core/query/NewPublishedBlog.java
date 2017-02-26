@@ -1,4 +1,4 @@
-package com.jvm_bloggers.frontend.public_area.newsletter_issue;
+package com.jvm_bloggers.core.query;
 
 import com.jvm_bloggers.entities.blog.Blog;
 import lombok.Builder;
@@ -7,15 +7,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Builder
-public class BlogDto {
+public class NewPublishedBlog {
 
     public String author;
     public String url;
     public String authorTwitterHandle;
     public BlogTypeDto type;
 
-    static BlogDto fromBlog(Blog blog) {
-        return BlogDto.builder()
+    static NewPublishedBlog fromBlog(Blog blog) {
+        return NewPublishedBlog.builder()
             .author(blog.getAuthor())
             .url(blog.getUrl())
             .authorTwitterHandle(blog.getTwitter())
@@ -23,9 +23,9 @@ public class BlogDto {
             .build();
     }
 
-    static List<BlogDto> fromBlogs(List<Blog> blogs) {
+    static List<NewPublishedBlog> fromBlogs(List<Blog> blogs) {
         return blogs.stream()
-            .map(BlogDto::fromBlog)
+            .map(NewPublishedBlog::fromBlog)
             .collect(Collectors.toList());
     }
 }

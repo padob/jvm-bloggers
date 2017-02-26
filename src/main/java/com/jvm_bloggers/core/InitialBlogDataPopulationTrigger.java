@@ -13,7 +13,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 /**
- * Initializes database with bloggers and posts data if database is empty.
+ * Initializes database with bloggers and publishedPosts data if database is empty.
  * Usually for the first time application starts.
  *
  * @author Marcin Kłopotek

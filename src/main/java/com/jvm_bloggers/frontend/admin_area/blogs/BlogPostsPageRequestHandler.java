@@ -46,7 +46,7 @@ public class BlogPostsPageRequestHandler implements IDataProvider<BlogPost> {
 
     String getPageHeader() {
         return Optional.ofNullable(blogRepository.findOne(blogId))
-            .map(b -> b.getAuthor() + "'s posts")
+            .map(b -> b.getAuthor() + "'s publishedPosts")
             .orElse("No such blog found");
     }
 }

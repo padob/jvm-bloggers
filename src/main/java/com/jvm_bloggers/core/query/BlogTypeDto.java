@@ -1,4 +1,4 @@
-package com.jvm_bloggers.frontend.public_area.newsletter_issue;
+package com.jvm_bloggers.core.query;
 
 import com.google.common.collect.ImmutableMap;
 import com.jvm_bloggers.entities.blog.BlogType;

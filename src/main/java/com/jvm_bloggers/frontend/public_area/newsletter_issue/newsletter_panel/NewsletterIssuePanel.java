@@ -1,6 +1,6 @@
 package com.jvm_bloggers.frontend.public_area.newsletter_issue.newsletter_panel;
 
-import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDto;
+import com.jvm_bloggers.core.query.PublishedNewsletterIssue;
 import com.jvm_bloggers.utils.DateTimeUtilities;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.wicket.markup.html.basic.Label;
@@ -9,11 +9,11 @@ import org.apache.wicket.markup.html.panel.Panel;
 
 public class NewsletterIssuePanel extends Panel {
 
-    public NewsletterIssuePanel(String id, NewsletterIssueDto issue) {
+    public NewsletterIssuePanel(String id, PublishedNewsletterIssue issue) {
         super(id);
         add(new Label("title", "Wydanie #" + issue.number));
         add(new Label("issueDate", issue.publishedDate.format(DateTimeUtilities.DATE_FORMATTER)));
-        addHeading(issue.heading);
+        addHeading(issue.headingSection);
 
         add(
             new BlogPostLinksSection(
@@ -31,7 +31,7 @@ public class NewsletterIssuePanel extends Panel {
         );
         add(new BlogPostLinksSection("linksFromVideoChannels", "Nowe nagrania", issue.getVideos()));
         add(new BlogLinksSection("newBlogs", issue.newBlogs));
-        addVaria(issue.varia);
+        addVaria(issue.variaSection);
     }
 
     private void addVaria(String variaContent) {

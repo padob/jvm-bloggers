@@ -8,20 +8,20 @@ services:
       DB_NAME: $JVM_BLOGGERS_DB_NAME
     ports:
       - "$JVM_BLOGGERS_DB_PUBLISHED_PORT:5432"
-    volumes:
-      - "$JVM_BLOGGERS_DB_PATH:/var/lib/postgresql"
-  jvm-bloggers-core:
-    image: jvmbloggers/jvm-bloggers:$JVM_BLOGGERS_CORE_IMAGE_VERSION
-    environment:
-      spring.profiles.active: $JVM_BLOGGERS_CORE_SPRING_PROFILES
-      jasypt.encryptor.password: $JVM_BLOGGERS_CORE_ENCRYPTOR_PASSWORD
-    ports:
-      - "$JVM_BLOGGERS_CORE_PORT:8080"
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /usr/share/zoneinfo/Europe/Warsaw:/etc/timezone:ro
-      - /tmp
-    links:
-      - jvm-bloggers-db
-    depends_on:
-      - jvm-bloggers-db
+#    volumes:
+#      - "$JVM_BLOGGERS_DB_PATH:/var/lib/postgresql"
+#  jvm-bloggers-core:
+#    image: jvmbloggers/jvm-bloggers:$JVM_BLOGGERS_CORE_IMAGE_VERSION
+#    environment:
+#      spring.profiles.active: $JVM_BLOGGERS_CORE_SPRING_PROFILES
+#      jasypt.encryptor.password: $JVM_BLOGGERS_CORE_ENCRYPTOR_PASSWORD
+#    ports:
+#      - "$JVM_BLOGGERS_CORE_PORT:8080"
+#    volumes:
+#      - /etc/localtime:/etc/localtime:ro
+#      - /usr/share/zoneinfo/Europe/Warsaw:/etc/timezone:ro
+#      - /tmp
+#    links:
+#      - jvm-bloggers-db
+#    depends_on:
+#      - jvm-bloggers-db

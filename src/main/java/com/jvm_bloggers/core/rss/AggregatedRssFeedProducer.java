@@ -61,19 +61,19 @@ public class AggregatedRssFeedProducer {
     private final LinkGenerator linkGenerator;
 
     /**
-     * Generates aggregated RSS feed for all or given <tt>limit</tt> of approved blog posts.
+     * Generates aggregated RSS feed for all or given <tt>limit</tt> of approved blog publishedPosts.
      *
      * @param feedUrl Value of the <tt>{@literal <link rel=self/>}</tt> element
      *     of the generated feed. It identifies the URL of the web site associated
      *     with the generated feed. Cannot be <tt>null</tt> nor empty.
      *
      * @param limit Upper limit of RSS entries count in the generated feed. If equal or less
-     *     than zero then all approved blog posts will be generated.
+     *     than zero then all approved blog publishedPosts will be generated.
      *
      * @param excludedAuthors RSS entries for given authors will be excluded
      *     from the generated feed (may be <code>null</code>)
      *
-     * @return Aggregated RSS feed for approved blog posts ordered by publication date
+     * @return Aggregated RSS feed for approved blog publishedPosts ordered by publication date
      */
     @Cacheable
     public SyndFeed getRss(String feedUrl, int limit, Set<String> excludedAuthors) {

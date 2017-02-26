@@ -1,9 +1,9 @@
-package com.jvm_bloggers.frontend.public_area.newsletter_issue;
+package com.jvm_bloggers.core.query;
 
 import lombok.Builder;
 
 @Builder
-public class BlogPostDto {
+public class PublishedPost {
 
     public String url;
     public String title;

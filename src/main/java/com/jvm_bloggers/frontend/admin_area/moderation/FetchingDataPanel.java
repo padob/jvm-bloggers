@@ -41,12 +41,12 @@ public class FetchingDataPanel extends Panel {
 
             @Override
             public void onClick(AjaxRequestTarget target) {
-                log.debug("Fetching blog posts data clicked");
+                log.debug("Fetching blog publishedPosts data clicked");
                 if (!blogPostsFetcher.isFetchingProcessInProgress()) {
                     blogPostsFetcher.refreshPostsAsynchronously();
-                    getSession().success("Fetching blog posts data started");
+                    getSession().success("Fetching blog publishedPosts data started");
                 } else {
-                    getSession().error("Fetching blog posts data already in progress");
+                    getSession().error("Fetching blog publishedPosts data already in progress");
                 }
 
                 target.add(feedback);

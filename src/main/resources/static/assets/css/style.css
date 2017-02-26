@@ -52,7 +52,7 @@ Author:	trinixstudio
 36. Boxs / #boxs
 37. Counter / #counter
 38. Pricing / #pricing
-39. Posts / #posts
+39. Posts / #publishedPosts
 40. Flex Lists / #flex-lists
 41. Marked Lists / #marked-lists
 42. Index Lists / #index-lists
@@ -20125,7 +20125,7 @@ html:not(.lt-ie10) .not-animated {
   background: #3498db;
 }
 
-/* 39. Posts / #posts */
+/* 39. Posts / #publishedPosts */
 /*
 * @subsection   Post
 */

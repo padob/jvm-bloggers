@@ -2,7 +2,7 @@ package com.jvm_bloggers.frontend.public_area.all_issues;
 
 import com.jvm_bloggers.frontend.public_area.AbstractFrontendPage;
 import com.jvm_bloggers.frontend.public_area.all_issues.all_issues_panel.AllIssuesPanel;
-import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDto;
+import com.jvm_bloggers.core.query.PublishedNewsletterIssue;
 import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssueDtoService;
 import com.jvm_bloggers.frontend.public_area.newsletter_issue.NewsletterIssuePage;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -47,7 +47,7 @@ public class AllIssuesPage extends AbstractFrontendPage {
                 mapping(this::getLink, toList())));
     }
 
-    private Link<?> getLink(NewsletterIssueDto issue) {
+    private Link<?> getLink(PublishedNewsletterIssue issue) {
         return (Link<?>) new BookmarkablePageLink<>("issueLink", NewsletterIssuePage.class,
             NewsletterIssuePage.buildShowIssueParams(issue.number))
             .setBody(Model.of(new StringResourceModel("all.issues.link.label")
@@ -55,7 +55,7 @@ public class AllIssuesPage extends AbstractFrontendPage {
                     DATE_FORMATTER.format(issue.publishedDate))));
     }
 
-    private String getIssuesGroupNameKey(NewsletterIssueDto issue) {
+    private String getIssuesGroupNameKey(PublishedNewsletterIssue issue) {
         return YEAR_MONTH_FORMATTER.format(issue.publishedDate);
     }
 }
